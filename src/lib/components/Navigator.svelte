@@ -13,6 +13,13 @@
 		toggleMode();
 		isDark = !isDark;
 	}
+
+	const Menu = [
+		{ name: 'Om Oss', href: '/om-oss' },
+		{ name: 'Servrar', href: '/servrar' },
+		{ name: 'Information', href: '/information' },
+		{ name: 'Samarbeten', href: '/samarbeten' }
+	];
 </script>
 
 <ModeWatcher />
@@ -24,12 +31,30 @@
 		</NavBrand>
 		<NavHamburger />
 		<NavUl>
-			<NavLi class="text-xl mr-4" href="/om-oss">Om Oss</NavLi>
-			<NavLi class="text-xl mr-4" href="/blog">Blog</NavLi>
-			<NavLi class="text-xl mr-4" href="/information">Information</NavLi>
-			<NavLi class="text-xl mr-4" href="/samarbeten">Samarbeten</NavLi>
-			<NavLi class="text-xl mr-4" href="/servrar">Servrar</NavLi>
-			<NavLi class="text-xl mr-4" href="/kontakt">Kontakt</NavLi>
+			<NavLi class="text-xl" href="/blog">Blog</NavLi>
+			<NavLi class="text-xl" href="/kalendern">Kalendern</NavLi>
+
+			<div class="md:hidden">
+				{#each Menu as item}
+					<NavLi class="text-xl" href={item.href}>{item.name}</NavLi>
+				{/each}
+			</div>
+
+			<div class="max-md:hidden">
+				<NavLi class="flex cursor-pointer items-center">
+					<span class="text-xl">Mer</span><ChevronDownOutline />
+				</NavLi>
+				<MegaMenu items={Menu} class="dark:bg-[#121212]">
+					{#snippet children({ item })}
+						<a
+							href={item.href}
+							class="hover:text-primary-500 dark:text-gray-400 dark:hover:text-white">{item.name}</a
+						>
+					{/snippet}
+				</MegaMenu>
+			</div>
+
+			<NavLi class="text-xl" href="/kontakt">Kontakt</NavLi>
 			<button onclick={toggleTheme} class="ml-4 p-2"><DarkModeIcon /></button>
 		</NavUl>
 	</Navbar>
