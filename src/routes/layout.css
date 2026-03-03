@@ -1,41 +1,59 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @plugin 'flowbite/plugin';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-primary-50: #88E86A;
-  --color-primary-100: #7BE558;
-  --color-primary-200: #62E039;
-  --color-primary-300: #4ED922;
-  --color-primary-400: #47C41F;
-  --color-primary-500: #43B91D;
-  --color-primary-600: #3DAA1B;
-  --color-primary-700: #338E16;
-  --color-primary-800: #266911;
-  --color-primary-900: #173E0A;
-  --color-primary-950: #0E2706;
+	--color-primary-50: #88e86a;
+	--color-primary-100: #7be558;
+	--color-primary-200: #62e039;
+	--color-primary-300: #4ed922;
+	--color-primary-400: #47c41f;
+	--color-primary-500: #43b91d;
+	--color-primary-600: #3daa1b;
+	--color-primary-700: #338e16;
+	--color-primary-800: #266911;
+	--color-primary-900: #173e0a;
+	--color-primary-950: #0e2706;
 
-  --color-secondary-50: #323D7B;
-  --color-secondary-100: #2D376E;
-  --color-secondary-200: #252D5A;
-  --color-secondary-300: #1F264C;
-  --color-secondary-400: #1B2143;
-  --color-secondary-500: #1A2040;
-  --color-secondary-600: #191F3E;
-  --color-secondary-700: #171C39;
-  --color-secondary-800: #131830;
-  --color-secondary-900: #0E1123;
-  --color-secondary-950: #0B0E1B;
+	--color-secondary-50: #323d7b;
+	--color-secondary-100: #2d376e;
+	--color-secondary-200: #252d5a;
+	--color-secondary-300: #1f264c;
+	--color-secondary-400: #1b2143;
+	--color-secondary-500: #1a2040;
+	--color-secondary-600: #191f3e;
+	--color-secondary-700: #171c39;
+	--color-secondary-800: #131830;
+	--color-secondary-900: #0e1123;
+	--color-secondary-950: #0b0e1b;
 }
 
-@source "../../node_modules/flowbite-svelte/dist";
-@source "../../node_modules/flowbite-svelte-icons/dist";
+@source '../../node_modules/flowbite-svelte/dist';
+@source '../../node_modules/flowbite-svelte-icons/dist';
 
 @layer base {
-  /* disable chrome cancel button */
-  input[type="search"]::-webkit-search-cancel-button {
-    display: none;
-  }
+	/* disable chrome cancel button */
+	input[type='search']::-webkit-search-cancel-button {
+		display: none;
+	}
+}
+
+* {
+	--tw-ring-color: rgb(0 0 0 / 0) !important;
+}
+
+/* MAIN PAGE IMAGE */
+
+.img-clip {
+	clip-path: polygon(30% 0, 100% 0, 75% 100%, 30% 100%);
+	transform: translateX(-30%);
+}
+
+@media (max-width: 40rem) {
+	.img-clip {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+		transform: translateX(0%);
+	}
 }
