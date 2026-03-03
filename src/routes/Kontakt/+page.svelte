@@ -17,7 +17,7 @@
 		<ContactCard name="Github" Icon={GithubSolid} link="https://github.com/onlinesgc" />
 		<ContactCard name="Instagram" Icon={InstagramSolid} link="https://www.instagram.com/sgckontot/" />
 		<ContactCard name="Youtube" Icon={YoutubeSolid} link="https://www.youtube.com/@onlineforeningensgc" />
-		<ContactCard name="Sverok" Icon={mode.current === 'dark' ? SverokIconWhite : SverokIconBlack} link="https://sverok.se" />
+		<ContactCard name="Bli medlem" Icon={mode.current === 'dark' ? SverokIconWhite : SverokIconBlack} link="https://sverok.se" />
 		<ContactCard name="Facebook" Icon={FacebookSolid} link="https://www.facebook.com/people/Onlinef%C3%B6reningen-SGC/61554997371254/" />
 	</div>
 </div>
