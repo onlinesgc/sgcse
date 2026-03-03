@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
-	import { ModeWatcher } from 'mode-watcher';
-	import { toggleMode } from 'mode-watcher';
+	import { ModeWatcher, toggleMode} from 'mode-watcher';
 
 	import { SunSolid, MoonSolid } from 'flowbite-svelte-icons';
 

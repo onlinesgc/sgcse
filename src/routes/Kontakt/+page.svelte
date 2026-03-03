@@ -1,7 +1,10 @@
 <script>
 	import ContactCard from '$lib/components/ContactCard.svelte';
-	import { DiscordSolid, GithubSolid, InstagramSolid, TwitterSolid, XSolid, YoutubeSolid } from 'flowbite-svelte-icons';
-    import SwerockIcon from '$lib/assets/sverok.svg';
+	import { DiscordSolid, FacebookSolid, GithubSolid, InstagramSolid, XSolid, YoutubeSolid } from 'flowbite-svelte-icons';
+	import SverokIconBlack from '$lib/assets/sverok_black.svg';
+	import SverokIconWhite from '$lib/assets/sverok_white.svg';
+	import { mode } from 'mode-watcher';
+
 </script>
 
 
@@ -14,10 +17,7 @@
 		<ContactCard name="Github" Icon={GithubSolid} link="https://github.com/onlinesgc" />
 		<ContactCard name="Instagram" Icon={InstagramSolid} link="https://www.instagram.com/sgckontot/" />
 		<ContactCard name="Youtube" Icon={YoutubeSolid} link="https://www.youtube.com/@onlineforeningensgc" />
-		<ContactCard name="Discord" Icon={DiscordSolid} link="https://blimedlem.sgc.se" />
-		<ContactCard name="Discord" Icon={DiscordSolid} link="https://discord.sgc.se" />
-		<ContactCard name="Discord" Icon={DiscordSolid} link="https://discord.sgc.se" />
-		<ContactCard name="Discord" Icon={DiscordSolid} link="https://discord.sgc.se" />
-		<ContactCard name="Discord" Icon={DiscordSolid} link="https://discord.sgc.se" />
+		<ContactCard name="Sverok" Icon={mode.current === 'dark' ? SverokIconWhite : SverokIconBlack} link="https://sverok.se" />
+		<ContactCard name="Facebook" Icon={FacebookSolid} link="https://www.facebook.com/people/Onlinef%C3%B6reningen-SGC/61554997371254/" />
 	</div>
 </div>
