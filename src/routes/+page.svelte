@@ -1,6 +1,7 @@
 <script lang="ts">
 	import GruppFoto from '$lib/assets/Gruppfoto.webp';
 	import Logo from '$lib/components/Logo.svelte';
+	import TextPage from '$lib/components/TextPage.svelte';
 
 	let Desc =
 		'Vi är en medlemssdriven, HBTQ-vänlig förening och digitalt forum för ungdomar. Vi hänger främst på vår Discord som är öppen för alla!';
@@ -23,3 +24,6 @@
 		<h6 class="font-medium">{Desc}</h6>
 	</div>
 </section>
+<TextPage>
+	<h1 class="Sansumu">Hellåj</h1>
+</TextPage>

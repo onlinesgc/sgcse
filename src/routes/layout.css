@@ -49,6 +49,10 @@
 	src: url('/fonts/Sansumu02-Regular.ttf');
 }
 
+.Sansumu {
+	font-family: 'Sansumu';
+}
+
 /* MAIN PAGE IMAGE */
 
 .img-clip {

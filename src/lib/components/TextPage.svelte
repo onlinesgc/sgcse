@@ -1,7 +1,7 @@
 <script lang="ts">
-
+    let { children } = $props();
 </script>
 
-<section>
-    
+<section class="flex justify-center">
+    {@render children()}
 </section>
