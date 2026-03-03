@@ -1,14 +1,18 @@
 <script lang="ts">
-	import BlogPost from '$lib/components/BlogPost.svelte';
 	import type { BlogRecord } from '$lib/types/pocketbase-types';
+	import { ArrowLeftOutline } from 'flowbite-svelte-icons';
 
 	let { data } = $props();
 
-	const blogPost = $derived(data.blogPost as BlogRecord | null);
+	const blogPost = $derived(data.blogPost as BlogRecord);
 </script>
 
-{#if blogPost}
-	<BlogPost title={blogPost.title} content={blogPost.content} />
-{:else}
-	<p>Blog post not found</p>
-{/if}
+<div class="flex justify-center">
+	<a href="/blog" class="absolute left-0 h-16 w-16 m-4">
+		<ArrowLeftOutline class="h-full w-full" />
+	</a>
+	<div class="m-8 max-w-[60vw]">
+		<h1 class="Sansumu mb-4 text-4xl font-bold text-primary-500">{blogPost.title}</h1>
+		{@html blogPost.content}
+	</div>
+</div>

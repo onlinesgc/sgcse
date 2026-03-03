@@ -1,6 +1,6 @@
 <script>
 	import ContactCard from '$lib/components/ContactCard.svelte';
-	import { DiscordSolid, FacebookSolid, GithubSolid, InstagramSolid, XSolid, YoutubeSolid } from 'flowbite-svelte-icons';
+	import { DiscordSolid, EnvelopeSolid, FacebookSolid, GithubSolid, InstagramSolid, XSolid, YoutubeSolid } from 'flowbite-svelte-icons';
 	import SverokIconBlack from '$lib/assets/sverok_black.svg';
 	import SverokIconWhite from '$lib/assets/sverok_white.svg';
 	import { mode } from 'mode-watcher';
@@ -19,5 +19,6 @@
 		<ContactCard name="Youtube" Icon={YoutubeSolid} link="https://www.youtube.com/@onlineforeningensgc" />
 		<ContactCard name="Bli medlem" Icon={mode.current === 'dark' ? SverokIconWhite : SverokIconBlack} link="https://sverok.se" />
 		<ContactCard name="Facebook" Icon={FacebookSolid} link="https://www.facebook.com/people/Onlinef%C3%B6reningen-SGC/61554997371254/" />
+		<ContactCard name="Email" Icon={EnvelopeSolid} link="mailto:kontakt@sgc.se" />
 	</div>
 </div>

@@ -1,8 +1,21 @@
 <script lang="ts">
-	let { title, content } = $props<{ title?: string; content?: string }>();
+	import type { BlogRecord } from '$lib/types/pocketbase-types';
+
+	let { post } = $props<{ post: BlogRecord }>();
+
+	let created = $derived(new Date(post.created).toLocaleDateString());
+	let edited = $derived(new Date(post.updated).toLocaleDateString());
+
+	let dateString = $derived(created === edited ? created : `${created} · Uppdaterad: ${edited}`);
 </script>
 
-<div class="rounded-xl bg-neutral-50 p-4 shadow-xl">
-	<h1 class="Sansumu text-4xl font-bold text-primary-500">{title}</h1>
-	<span>{@html content}</span>
-</div>
+<a
+	class="rounded-xl bg-gray-200 p-4 shadow-xl duration-300 hover:scale-105 dark:bg-neutral-800 w-full"
+	href="/blog/{post.id}"
+>
+	<span class="flex items-center justify-between">
+		<h1 class="Sansumu text-4xl font-bold text-primary-500">{post.title}</h1>
+		<span class="ml-4 text-gray-500">{dateString}</span>
+	</span>
+	{@html post.content.substring(0, 150) + '...'}
+</a>
