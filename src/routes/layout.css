@@ -44,6 +44,11 @@
 	--tw-ring-color: rgb(0 0 0 / 0) !important;
 }
 
+@font-face {
+	font-family: 'Sansumu';
+	src: url('/fonts/Sansumu02-Regular.ttf');
+}
+
 /* MAIN PAGE IMAGE */
 
 .img-clip {
