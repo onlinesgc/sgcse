@@ -5,7 +5,7 @@
 
 </script>
 
-<Footer>
+<Footer class="mt-auto">
   <FooterCopyright href="/" by="Onlineföreningen SGC" year={date.getFullYear()} />
   <FooterLinkGroup class="mt-3 flex flex-wrap items-center text-sm text-gray-500 sm:mt-0 dark:text-gray-400">
     <FooterLink href="/">Om Oss</FooterLink>
