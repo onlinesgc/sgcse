@@ -8,9 +8,7 @@ RUN pnpm install --frozen-lockfile
 
 COPY . .
 RUN pnpm run build
-
 RUN pnpm prune --prod
-
 
 FROM gcr.io/distroless/nodejs22-debian13
 WORKDIR /app
