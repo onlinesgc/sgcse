@@ -12,14 +12,11 @@ RUN pnpm run build
 RUN pnpm prune --prod
 
 
-FROM node:25-alpine
+FROM gcr.io/distroless/nodejs22-debian13
 WORKDIR /app
-
-RUN npm install -g pnpm
 
 COPY --from=builder /app/build ./build
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./
-COPY --from=builder /app/pnpm-lock.yaml ./
 
-CMD ["node", "build/index.js"]
+ENTRYPOINT ["/nodejs/bin/node", "build/index.js"]
