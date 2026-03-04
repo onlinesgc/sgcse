@@ -1,13 +1,12 @@
 .dockerignore
 node_modules
-package
+pnpm-workspace.yaml
+.corepack
+pnpm-debug.log
 
 # Output
 .output
-.vercel
-.netlify
-.wrangler
-/.svelte-kit
+.svelte-kit
 /build
 
 # OS
@@ -37,3 +36,13 @@ vite.config.ts.timestamp-*
 .graphqlrc
 .editorconfig
 
+# Testing
+coverage
+*.test.js
+*.test.ts
+*.spec.js
+*.spec.ts
+
+# IDE
+.vscode
+.idea
