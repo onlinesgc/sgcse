@@ -13,7 +13,8 @@ export enum Collections {
 	Mfas = "_mfas",
 	Otps = "_otps",
 	Superusers = "_superusers",
-	Calendar = "calendar",
+	Calander = "calander",
+	Image = "image",
 	Users = "users",
 }
 
@@ -111,14 +112,37 @@ export type SuperusersRecord = {
 	verified?: boolean
 }
 
-export type CalendarRecord = {
+export enum CalanderTypeOptions {
+	"one-time" = "one-time",
+	"nth-weekday" = "nth-weekday",
+	"weekly" = "weekly",
+}
+
+export enum CalanderColorOptions {
+	"blue" = "blue",
+	"red" = "red",
+	"green" = "green",
+	"yellow" = "yellow",
+	"purple" = "purple",
+}
+export type CalanderRecord = {
+	color: CalanderColorOptions
 	created: IsoAutoDateString
-	description?: HTMLString
+	date?: IsoDateString
+	dayOfWeek?: number
+	description: HTMLString
 	id: string
-	title?: string
+	title: string
+	type: CalanderTypeOptions
 	updated: IsoAutoDateString
-	were?: string
-	when?: string
+	weekOfMonth?: number
+}
+
+export type ImageRecord = {
+	created: IsoAutoDateString
+	id: string
+	images?: FileNameString[]
+	updated: IsoAutoDateString
 }
 
 export type UsersRecord = {
@@ -142,7 +166,8 @@ export type ExternalauthsResponse<Texpand = unknown> = Required<ExternalauthsRec
 export type MfasResponse<Texpand = unknown> = Required<MfasRecord> & BaseSystemFields<Texpand>
 export type OtpsResponse<Texpand = unknown> = Required<OtpsRecord> & BaseSystemFields<Texpand>
 export type SuperusersResponse<Texpand = unknown> = Required<SuperusersRecord> & AuthSystemFields<Texpand>
-export type CalendarResponse<Texpand = unknown> = Required<CalendarRecord> & BaseSystemFields<Texpand>
+export type CalanderResponse<Texpand = unknown> = Required<CalanderRecord> & BaseSystemFields<Texpand>
+export type ImageResponse<Texpand = unknown> = Required<ImageRecord> & BaseSystemFields<Texpand>
 export type UsersResponse<Texpand = unknown> = Required<UsersRecord> & AuthSystemFields<Texpand>
 
 // Types containing all Records and Responses, useful for creating typing helper functions
@@ -155,7 +180,8 @@ export type CollectionRecords = {
 	_mfas: MfasRecord
 	_otps: OtpsRecord
 	_superusers: SuperusersRecord
-	calendar: CalendarRecord
+	calander: CalanderRecord
+	image: ImageRecord
 	users: UsersRecord
 }
 
@@ -167,7 +193,8 @@ export type CollectionResponses = {
 	_mfas: MfasResponse
 	_otps: OtpsResponse
 	_superusers: SuperusersResponse
-	calendar: CalendarResponse
+	calander: CalanderResponse
+	image: ImageResponse
 	users: UsersResponse
 }
 

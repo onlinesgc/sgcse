@@ -10,7 +10,7 @@
 </script>
 
 <a
-	class="rounded-xl bg-gray-200 p-4 shadow-xl duration-300 hover:scale-105 dark:bg-neutral-800 w-full"
+	class="w-full rounded-xl bg-gray-200 p-4 shadow-xl duration-300 hover:scale-105 dark:bg-neutral-800"
 	href="/blog/{post.id}"
 >
 	<span class="flex items-center justify-between">

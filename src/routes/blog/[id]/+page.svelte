@@ -8,7 +8,7 @@
 </script>
 
 <div class="flex justify-center">
-	<a href="/blog" class="absolute left-0 h-16 w-16 m-4">
+	<a href="/blog" class="absolute left-0 m-4 h-16 w-16">
 		<ArrowLeftOutline class="h-full w-full" />
 	</a>
 	<div class="m-8 max-w-[60vw]">
