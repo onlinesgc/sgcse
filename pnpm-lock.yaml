@@ -26,6 +26,9 @@ importers:
       pocketbase:
         specifier: ^0.26.8
         version: 0.26.8
+      simple-icons:
+        specifier: ^16.10.0
+        version: 16.10.0
       svelte:
         specifier: ^5.53.7
         version: 5.53.7
@@ -966,6 +969,10 @@ packages:
   set-cookie-parser@3.0.1:
     resolution: {integrity: sha512-n7Z7dXZhJbwuAHhNzkTti6Aw9QDDjZtm3JTpTGATIdNzdQz5GuFs22w90BcvF4INfnrL5xrX3oGsuqO5Dx3A1Q==}
 
+  simple-icons@16.10.0:
+    resolution: {integrity: sha512-62kuxaG3pE+cFNerudUtwb9BLmudzayHrlHkvU9gf8Nxcj7VYOm9dh3WNbGaFk60aQtfnRyzViZaouFG2B45kg==}
+    engines: {node: '>=0.12.18'}
+
   sirv@3.0.2:
     resolution: {integrity: sha512-2wcC/oGxHis/BoHkkPwldgiPSYcpZK3JU28WoMVv55yHJgcZ8rlXvuG9iZggz+sU1d4bRgIGASwyWqjxu3FM0g==}
     engines: {node: '>=18'}
@@ -1756,6 +1763,8 @@ snapshots:
       mri: 1.2.0
 
   set-cookie-parser@3.0.1: {}
+
+  simple-icons@16.10.0: {}
 
   sirv@3.0.2:
     dependencies:
