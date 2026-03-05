@@ -6,6 +6,6 @@ export const load: PageServerLoad = async ({ locals }) => {
 	const calanderRecord = await locals.pb.collection('calander').getList<CalanderRecord>();
 
 	return {
-		calanderRecord: calanderRecord.items
+		calanderRecord: calanderRecord.items,
 	};
 };

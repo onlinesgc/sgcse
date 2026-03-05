@@ -18,7 +18,7 @@
 		{ name: 'Om Oss', href: '/om-oss' },
 		{ name: 'Servrar', href: '/servrar' },
 		{ name: 'Information', href: '/information' },
-		{ name: 'Samarbeten', href: '/samarbeten' }
+		{ name: 'Samarbeten', href: '/samarbeten' },
 	];
 </script>
 
@@ -46,10 +46,7 @@
 				</NavLi>
 				<MegaMenu items={Menu} class="dark:bg-[#121212]">
 					{#snippet children({ item })}
-						<a
-							href={item.href}
-							class="hover:text-primary-500 dark:text-gray-400 dark:hover:text-white">{item.name}</a
-						>
+						<a href={item.href} class="hover:text-primary-500 dark:text-gray-400 dark:hover:text-white">{item.name}</a>
 					{/snippet}
 				</MegaMenu>
 			</div>

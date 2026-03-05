@@ -6,6 +6,6 @@ export const load: PageServerLoad = async ({ locals }) => {
 	const blogRecord = await locals.pb.collection('Blog').getList<BlogRecord>();
 
 	return {
-		blogPosts: blogRecord.items
+		blogPosts: blogRecord.items,
 	};
 };

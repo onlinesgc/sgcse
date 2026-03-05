@@ -11,7 +11,7 @@ export const load: PageServerLoad = async ({ locals, params }) => {
 		return { blogPost: blogRecord };
 	} catch {
 		throw error(404, {
-			message: 'Inlägg inte hittat!'
+			message: 'Inlägg inte hittat!',
 		});
 	}
 };
