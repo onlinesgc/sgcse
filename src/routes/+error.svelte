@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { resolve } from '$app/paths';
 </script>
 
 <svelte:head>
@@ -16,5 +15,5 @@
 		{page.error?.message ?? 'Something went wrong.'}
 	</p>
 
-	<a href={resolve('/')} class="rounded-lg bg-primary-500 px-6 py-3 text-white transition hover:opacity-90"> Go home </a>
+	<a href="/" class="rounded-lg bg-primary-500 px-6 py-3 text-white transition hover:opacity-90"> Go home </a>
 </div>

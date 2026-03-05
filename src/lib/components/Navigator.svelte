@@ -35,7 +35,7 @@
 			<NavLi class="text-xl" href="/kalendern">Kalendern</NavLi>
 
 			<div class="md:hidden">
-				{#each Menu as item}
+				{#each Menu as item (item.name)}
 					<NavLi class="text-xl" href={item.href}>{item.name}</NavLi>
 				{/each}
 			</div>
