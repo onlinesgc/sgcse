@@ -52,6 +52,10 @@
 	font-family: 'Sansumu';
 }
 
+.markdown {
+	@apply prose prose-slate dark:prose-invert;
+}
+
 /* MAIN PAGE IMAGE */
 
 .img-clip {

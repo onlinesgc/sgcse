@@ -1,16 +1,17 @@
 <script lang="ts">
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.webp';
-	import Navigator from '$lib/components/Navigator.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import Navbar from '$lib/components/navbar/Navbar.svelte';
 
 	let { children } = $props();
 </script>
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<title>Onlineföreningen SGC</title>
 </svelte:head>
 
-<Navigator />
+<Navbar />
 {@render children()}
 <Footer />

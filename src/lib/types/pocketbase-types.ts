@@ -8,6 +8,8 @@ import type { RecordService } from 'pocketbase'
 export enum Collections {
 	Blog = "Blog",
 	Calander = "Calander",
+	Collaborations = "Collaborations",
+	Information = "Information",
 	Servers = "Servers",
 	Authorigins = "_authOrigins",
 	Externalauths = "_externalAuths",
@@ -79,6 +81,24 @@ export type CalanderRecord = {
 	weekOfMonth?: number
 }
 
+export type CollaborationsRecord = {
+	created: IsoAutoDateString
+	description?: HTMLString
+	id: string
+	link?: string
+	name?: string
+	updated: IsoAutoDateString
+}
+
+export type InformationRecord = {
+	attachments?: FileNameString[]
+	created: IsoAutoDateString
+	description?: HTMLString
+	id: string
+	title?: string
+	updated: IsoAutoDateString
+}
+
 export type ServersRecord = {
 	created: IsoAutoDateString
 	description?: HTMLString
@@ -142,6 +162,8 @@ export type SuperusersRecord = {
 // Response types include system fields and match responses from the PocketBase API
 export type BlogResponse<Texpand = unknown> = Required<BlogRecord> & BaseSystemFields<Texpand>
 export type CalanderResponse<Texpand = unknown> = Required<CalanderRecord> & BaseSystemFields<Texpand>
+export type CollaborationsResponse<Texpand = unknown> = Required<CollaborationsRecord> & BaseSystemFields<Texpand>
+export type InformationResponse<Texpand = unknown> = Required<InformationRecord> & BaseSystemFields<Texpand>
 export type ServersResponse<Texpand = unknown> = Required<ServersRecord> & BaseSystemFields<Texpand>
 export type AuthoriginsResponse<Texpand = unknown> = Required<AuthoriginsRecord> & BaseSystemFields<Texpand>
 export type ExternalauthsResponse<Texpand = unknown> = Required<ExternalauthsRecord> & BaseSystemFields<Texpand>
@@ -154,6 +176,8 @@ export type SuperusersResponse<Texpand = unknown> = Required<SuperusersRecord> &
 export type CollectionRecords = {
 	Blog: BlogRecord
 	Calander: CalanderRecord
+	Collaborations: CollaborationsRecord
+	Information: InformationRecord
 	Servers: ServersRecord
 	_authOrigins: AuthoriginsRecord
 	_externalAuths: ExternalauthsRecord
@@ -165,6 +189,8 @@ export type CollectionRecords = {
 export type CollectionResponses = {
 	Blog: BlogResponse
 	Calander: CalanderResponse
+	Collaborations: CollaborationsResponse
+	Information: InformationResponse
 	Servers: ServersResponse
 	_authOrigins: AuthoriginsResponse
 	_externalAuths: ExternalauthsResponse
