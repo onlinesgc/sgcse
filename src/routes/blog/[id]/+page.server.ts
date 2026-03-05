@@ -7,7 +7,6 @@ export const load: PageServerLoad = async ({ locals, params }) => {
 
 	try {
 		const blogRecord = await locals.pb.collection('Blog').getOne<BlogRecord>(id);
-
 		return { blogPost: blogRecord };
 	} catch {
 		throw error(404, {

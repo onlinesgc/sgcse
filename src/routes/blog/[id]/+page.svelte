@@ -13,6 +13,6 @@
 	</a>
 	<div class="m-8 max-w-[60vw]">
 		<h1 class="Sansumu mb-4 text-4xl font-bold text-primary-500">{blogPost.title}</h1>
-		{@html blogPost.content}
+		<span class="prose prose-slate dark:prose-invert">{@html blogPost.content}</span>
 	</div>
 </div>

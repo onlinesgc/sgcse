@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 
+@plugin '@tailwindcss/typography';
 @plugin 'flowbite/plugin';
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -39,7 +40,6 @@
 		display: none;
 	}
 }
-
 * {
 	--tw-ring-color: rgb(0 0 0 / 0) !important;
 }

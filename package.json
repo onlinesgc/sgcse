@@ -42,6 +42,7 @@
 	"dependencies": {
 		"@sveltejs/adapter-node": "^5.5.4",
 		"@sveltejs/kit": "^2.53.4",
+		"@tailwindcss/typography": "^0.5.19",
 		"mode-watcher": "^1.1.0",
 		"pocketbase": "^0.26.8",
 		"svelte": "^5.53.7"
