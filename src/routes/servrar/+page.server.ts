@@ -1,11 +1,11 @@
 import type { ServersRecord } from '$lib/types/pocketbase-types';
 import type { PageServerLoad } from './$types';
+import { getList } from '$lib/pocketbase';
 
-/** @type {PageServerLoad} */
 export const load: PageServerLoad = async ({ locals }) => {
-    const serversRecord = await locals.pb.collection('Servers').getList<ServersRecord>();
+	const servers = await getList<ServersRecord>(locals.pb, 'Servers');
 
-    return {
-        servers: serversRecord.items,
-    };
+	return {
+		servers: servers.items,
+	};
 };

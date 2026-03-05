@@ -1,11 +1,11 @@
 import type { BlogRecord } from '$lib/types/pocketbase-types';
 import type { PageServerLoad } from './$types';
+import { getList } from '$lib/pocketbase';
 
-/** @type {PageServerLoad} */
 export const load: PageServerLoad = async ({ locals }) => {
-	const blogRecord = await locals.pb.collection('Blog').getList<BlogRecord>();
+	const blogPosts = await getList<BlogRecord>(locals.pb, 'Blog');
 
 	return {
-		blogPosts: blogRecord.items,
+		blogPosts: blogPosts.items,
 	};
 };

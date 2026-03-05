@@ -1,9 +1,9 @@
 import type { CalanderRecord } from '$lib/types/pocketbase-types';
 import type { PageServerLoad } from './$types';
+import { getList } from '$lib/pocketbase';
 
-/** @type {PageServerLoad} */
 export const load: PageServerLoad = async ({ locals }) => {
-	const calanderRecord = await locals.pb.collection('Calander').getList<CalanderRecord>();
+	const calanderRecord = await getList<CalanderRecord>(locals.pb, 'Calander');
 
 	return {
 		calanderRecord: calanderRecord.items,
