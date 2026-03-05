@@ -1,3 +1,5 @@
 # allow crawling everything by default
 User-agent: *
-Disallow:
+Disallow: /
+Crawl-delay: 20
+Disallow: /static
