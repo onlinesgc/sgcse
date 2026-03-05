@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Component } from 'svelte';
-	type IconProp = Component | string;
+	import type { ComponentType, SvelteComponent } from 'svelte';
+	type IconProp = ComponentType<SvelteComponent> | string;
 
 	let { name, Icon, link } = $props<{ name: string; Icon: IconProp; link: string }>();
 </script>

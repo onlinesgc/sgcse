@@ -24,8 +24,6 @@
 		"@types/node": "^25.3.3",
 		"clsx": "^2.1.1",
 		"flowbite": "^4.0.1",
-		"flowbite-svelte": "^1.31.0",
-		"flowbite-svelte-icons": "^3.1.0",
 		"globals": "^17.4.0",
 		"prettier": "^3.8.1",
 		"prettier-plugin-svelte": "^3.5.1",
@@ -43,6 +41,7 @@
 		"@sveltejs/adapter-node": "^5.5.4",
 		"@sveltejs/kit": "^2.53.4",
 		"@tailwindcss/typography": "^0.5.19",
+		"lucide-svelte": "^0.577.0",
 		"mode-watcher": "^1.1.0",
 		"pocketbase": "^0.26.8",
 		"svelte": "^5.53.7"

@@ -1,14 +1,15 @@
 <script lang="ts">
-	import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup } from 'flowbite-svelte';
-
 	let date = new Date();
 </script>
 
-<Footer class="mt-auto dark:bg-[#121212]">
-	<!--TODO: Find the correct variable for ts, It should not be #121212-->
-	<FooterCopyright href="/" by="Onlineföreningen SGC" year={date.getFullYear()} />
-	<FooterLinkGroup class="mt-3 flex flex-wrap items-center text-sm text-gray-500 sm:mt-0 dark:text-gray-400">
-		<FooterLink href="/">Om Oss</FooterLink>
-		<FooterLink href="/kontakt">Kontakt</FooterLink>
-	</FooterLinkGroup>
-</Footer>
+<footer class="mt-auto bg-white dark:bg-[#121212]">
+	<div class="mx-auto flex flex-col items-center justify-between gap-4 p-4 sm:flex-row">
+		<p class="text-sm text-gray-500 dark:text-gray-400">
+			&copy; {date.getFullYear()} Onlineföreningen SGC. All rights reserved.
+		</p>
+		<div class="flex gap-4">
+			<a href="/" class="text-sm text-gray-500 hover:text-primary-500 dark:text-gray-400">Om Oss</a>
+			<a href="/kontakt" class="text-sm text-gray-500 hover:text-primary-500 dark:text-gray-400">Kontakt</a>
+		</div>
+	</div>
+</footer>

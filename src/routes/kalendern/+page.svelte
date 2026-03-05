@@ -2,8 +2,7 @@
 	import EventCard from '$lib/components/EventCard.svelte';
 	import EventModal from '$lib/components/EventModal.svelte';
 	import type { CalanderRecord } from '$lib/types/pocketbase-types.js';
-	import { Button } from 'flowbite-svelte';
-	import { ChevronLeftOutline, ChevronRightOutline } from 'flowbite-svelte-icons';
+	import { ChevronLeft, ChevronRight } from 'lucide-svelte';
 	import { SvelteDate } from 'svelte/reactivity';
 
 	let { data } = $props();
@@ -75,21 +74,24 @@
 				{currentMonthDisplay}
 			</h2>
 			<div class="flex gap-2">
-				<Button outline size="sm" color="light" class="dark:border-gray-700 dark:bg-[#1a1a1a]" onclick={prevWeek}>
-					<ChevronLeftOutline class="mr-1 h-4 w-4" /> Föregående
-				</Button>
-				<Button
-					outline
-					size="sm"
-					color="light"
-					class="dark:border-gray-700 dark:bg-[#1a1a1a]"
+				<button
+					class="flex items-center rounded border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-700 dark:bg-[#1a1a1a] dark:text-white dark:hover:bg-gray-700"
+					onclick={prevWeek}
+				>
+					<ChevronLeft class="mr-1 h-4 w-4" /> Föregående
+				</button>
+				<button
+					class="flex items-center rounded border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-700 dark:bg-[#1a1a1a] dark:text-white dark:hover:bg-gray-700"
 					onclick={() => (baseDate = new SvelteDate())}
 				>
 					Idag
-				</Button>
-				<Button outline size="sm" color="light" class="dark:border-gray-700 dark:bg-[#1a1a1a]" onclick={nextWeek}>
-					Nästa <ChevronRightOutline class="ml-1 h-4 w-4" />
-				</Button>
+				</button>
+				<button
+					class="flex items-center rounded border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-700 dark:bg-[#1a1a1a] dark:text-white dark:hover:bg-gray-700"
+					onclick={nextWeek}
+				>
+					Nästa <ChevronRight class="ml-1 h-4 w-4" />
+				</button>
 			</div>
 		</div>
 

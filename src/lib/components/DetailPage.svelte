@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ArrowLeftOutline } from 'flowbite-svelte-icons';
+	import { ArrowLeft } from 'lucide-svelte';
 
 	interface Props {
 		backHref: string;
@@ -14,7 +14,7 @@
 
 <div class="flex justify-center">
 	<a href={backHref} class="absolute left-0 m-4 h-16 w-16">
-		<ArrowLeftOutline class="h-full w-full" />
+		<ArrowLeft class="h-full w-full" />
 	</a>
 	<div class="m-8 max-w-[60vw]">
 		{#if image}
