@@ -1,4 +1,4 @@
-FROM node:25-alpine AS builder
+FROM node:22-alpine AS builder
 WORKDIR /app
 
 RUN npm install -g pnpm
@@ -7,7 +7,7 @@ COPY package*.json pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile
 
 COPY . .
-RUN pnpm run build /
+RUN pnpm run build && \
     pnpm prune --prod
 
 FROM gcr.io/distroless/nodejs22-debian13
