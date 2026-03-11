@@ -3,7 +3,7 @@
 	import Logo from '$lib/components/Logo.svelte';
 
 	let Desc =
-		'Vi är en medlemssdriven, HBTQ-vänlig förening och digitalt forum för ungdomar. Vi hänger främst på vår Discord som är öppen för alla!';
+		'Vi är en medlemsdriven, HBTQ-vänlig förening och digitalt forum för ungdomar. Vi hänger främst på vår Discord som är öppen för alla!';
 </script>
 
 <section class="relative">
