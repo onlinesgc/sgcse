@@ -4,7 +4,7 @@ The official website for the SGC community.
 
 ## Development
 
-Clone this repository then go into the folder and type
+Clone this repository, enter the project folder and run
 ```bash
 pnpm install
 ```
