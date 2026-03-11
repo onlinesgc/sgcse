@@ -25,8 +25,8 @@
 </section>
 <div class="flex justify-center">
 	<div class="flex max-w-[80vw] flex-col justify-center text-center">
-		<p class="text-xl mt-16">
-			Vi är en medlemssdriven, HBTQ-vänlig förening och digitalt forum för ungdomar. Vi hänger främst på vår Discord som är öppen för alla!
+		<p class="mt-16 text-xl">
+			Vi är en medlemsdriven, HBTQ-vänlig förening och digitalt forum för ungdomar. Vi hänger främst på vår Discord som är öppen för alla!
 			Med stöd av Sverok. Detta är vår hemsida där ni kan hitta information om våra event (digitala och fysiska) på vår kalender, om våra
 			spelservrar under servrar, och om vår förening i allmänhet på om oss. Om du är förälder till ett barn som hänger i SGC och vill veta
 			mer om oss, besök gärna vår flik för föräldrar. Vill du få reda på vilken level någon medlem av discorden är? Besök
