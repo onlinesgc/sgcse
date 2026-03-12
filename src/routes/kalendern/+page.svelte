@@ -65,7 +65,7 @@
 	}
 </script>
 
-<div class="mx-auto flex min-h-[85vh] max-w-screen-2xl flex-col p-4 sm:p-6 lg:p-8">
+<div class="mx-auto flex min-h-[85vh] flex-col p-4 sm:p-6 lg:p-8">
 	<div
 		class="flex w-full grow flex-col rounded-2xl border border-gray-200 bg-gray-50 p-5 shadow-inner sm:p-7 dark:border-gray-800 dark:bg-[#121212]"
 	>
@@ -95,7 +95,7 @@
 			</div>
 		</div>
 
-		<div class="grid grow grid-cols-1 gap-4 md:grid-cols-7">
+		<div class="grid grow grid-cols-1 gap-4 xl:grid-cols-7">
 			{#each weekDays as day (day.getTime())}
 				<div
 					class="flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-[#151515]"
