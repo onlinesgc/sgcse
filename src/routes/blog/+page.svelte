@@ -14,7 +14,7 @@
 			{@const edited = new Date(post.updated).toLocaleDateString()}
 			{@const dateString = created === edited ? created : `${created} · Uppdaterad: ${edited}`}
 			<Card href={'/blog/' + post.id} title={post.title ?? ''}>
-				<span class="ml-4 text-gray-500">{dateString}</span>
+				<span class="text-gray-500">{dateString}</span>
 				{@html post.content?.substring(0, 150) + '...'}
 			</Card>
 		{/each}
