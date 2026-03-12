@@ -88,6 +88,7 @@ export type CollaborationsRecord = {
 	link?: string
 	name?: string
 	updated: IsoAutoDateString
+	z_index?: number
 }
 
 export type InformationRecord = {

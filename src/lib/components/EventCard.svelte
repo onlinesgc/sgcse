@@ -23,7 +23,7 @@
 	{onclick}
 >
 	<div class="mb-2 flex items-start justify-between">
-		<h5 class="text-sm leading-tight font-bold tracking-tight text-gray-900 dark:text-white">
+		<h5 class="truncate text-sm leading-tight font-bold tracking-tight text-gray-900 dark:text-white">
 			{event.title}
 		</h5>
 		<span class="{colorClasses[event.color || 'blue']} rounded px-2 py-0.5 text-xs">
