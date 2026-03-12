@@ -40,10 +40,8 @@
 				<span class="markdown">Eller gå direkt med i föreningen!</span>
 			</div>
 			<div class="flex justify-around">
-				{#key mode.current}
-					<ContactCard name="Discord" Icon={siDiscord} link="https://discord.sgc.se" />
-					<ContactCard name="Bli medlem" Icon={mode.current === 'dark' ? SverokIconWhite : SverokIconBlack} link="https://sverok.se" />					
-				{/key}
+				<ContactCard name="Discord" Icon={siDiscord} link="https://discord.sgc.se" />
+				<ContactCard name="Bli medlem" Icon={mode.current === 'light' ? SverokIconBlack : SverokIconWhite} link="https://sverok.se" />
 			</div>
 		</div>
 	</div>
