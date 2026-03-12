@@ -9,7 +9,7 @@
 	import { siDiscord } from 'simple-icons';
 
 	let Desc =
-		'Vi är en medlemssdriven, HBTQ-vänlig förening och digitalt forum för ungdomar. Vi hänger främst på vår Discord som är öppen för alla!';
+		'Vi är en medlemsdriven, HBTQ-vänlig förening och digitalt forum för ungdomar. Vi hänger främst på vår Discord som är öppen för alla!';
 </script>
 
 <div>
