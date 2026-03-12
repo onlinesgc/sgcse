@@ -56,6 +56,10 @@
 	@apply prose prose-slate dark:prose-invert;
 }
 
+.discord-clip {
+	clip-path: inset(0 0 0 0 round 10px)
+}
+
 /* MAIN PAGE IMAGE */
 
 .img-clip {
