@@ -18,7 +18,7 @@
 	<h1 class="Sansumu text-6xl text-primary-500">Våra Sociala Medier</h1>
 	<div class="grid grid-cols-1 gap-6 p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
 		<ContactCard name="Email" Icon={Mail} link="mailto:kontakt@sgc.se" />
-		<ContactCard name="Bli medlem" Icon={mode.current === 'dark' ? SverokIconWhite : SverokIconBlack} link="https://sverok.se" />
+		<ContactCard name="Bli medlem" Icon={mode.current === 'light' ? SverokIconBlack : SverokIconWhite} link="https://sverok.se" />
 		<ContactCard name="Discord" Icon={siDiscord} link="https://discord.sgc.se" />
 		<ContactCard name="Instagram" Icon={siInstagram} link="https://www.instagram.com/sgckontot/" />
 		<ContactCard name="Youtube" Icon={siYoutube} link="https://www.youtube.com/@onlineforeningensgc" />

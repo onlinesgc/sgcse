@@ -41,7 +41,7 @@
 			</div>
 			<div class="flex justify-around">
 				<ContactCard name="Discord" Icon={siDiscord} link="https://discord.sgc.se" />
-				<ContactCard name="Bli medlem" Icon={mode.current === 'dark' ? SverokIconWhite : SverokIconBlack} link="https://sverok.se" />
+				<ContactCard name="Bli medlem" Icon={mode.current === 'light' ? SverokIconBlack : SverokIconWhite} link="https://sverok.se" />
 			</div>
 		</div>
 	</div>
