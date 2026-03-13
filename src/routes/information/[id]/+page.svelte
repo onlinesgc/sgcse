@@ -6,12 +6,4 @@
 	const information = $derived(data.information as InformationRecord);
 </script>
 
-<DetailPage
-	backHref="/information"
-	title={information.title ?? ''}
-	content={information.description}
-	image={information.image ? { id: information.id, filename: information.image } : null}
-	attachments={information.attachments}
-	record_id={information.id}
-	collection_name="Information"
-/>
+<DetailPage record={information} />

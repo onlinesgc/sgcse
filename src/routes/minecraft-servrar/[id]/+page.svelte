@@ -6,11 +6,4 @@
 	const server = $derived(data.server as ServersRecord);
 </script>
 
-<DetailPage
-	record_id={server.id}
-	backHref="/minecraft-servrar"
-	title={server.name ?? ''}
-	content={server.description}
-	image={server.image ? { id: server.id, filename: server.image } : null}
-	collection_name="Servers"
-/>
+<DetailPage record={server} />
