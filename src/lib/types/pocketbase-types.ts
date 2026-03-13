@@ -96,6 +96,7 @@ export type InformationRecord = {
 	created: IsoAutoDateString
 	description?: HTMLString
 	id: string
+	image?: FileNameString
 	title?: string
 	updated: IsoAutoDateString
 }

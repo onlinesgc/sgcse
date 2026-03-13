@@ -10,7 +10,8 @@
 	backHref="/information"
 	title={information.title ?? ''}
 	content={information.description}
-	image={null}
+	image={information.image ? { id: information.id, filename: information.image } : null}
 	attachments={information.attachments}
-	id={information.id}
+	record_id={information.id}
+	collection_name="Information"
 />

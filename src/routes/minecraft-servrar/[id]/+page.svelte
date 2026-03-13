@@ -7,8 +7,10 @@
 </script>
 
 <DetailPage
-	backHref="/servrar"
+	record_id={server.id}
+	backHref="/minecraft-servrar"
 	title={server.name ?? ''}
 	content={server.description}
 	image={server.image ? { id: server.id, filename: server.image } : null}
+	collection_name="Servers"
 />
