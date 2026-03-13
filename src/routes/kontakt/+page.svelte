@@ -3,22 +3,23 @@
 	import { Mail } from 'lucide-svelte';
 	import { siDiscord, siX, siGithub, siInstagram, siYoutube, siFacebook } from 'simple-icons';
 	import SverokIcon from '$lib/assets/icons/SverokIcon.svelte';
+	import type { Component } from 'svelte';
 
 	type Contact = {
 		name: string;
-		icon: string | typeof Mail | typeof siDiscord;
+		icon: string | typeof Mail | Component | typeof siDiscord;
 		link: string;
 	};
 
 	const contacts: Contact[] = [
-		{ name: "Email", icon: Mail, link: "mailto:kontakt@sgc.se" },
-		{ name: "Bli medlem", icon: SverokIcon, link: "https://sverok.se" },
-		{ name: "Discord", icon: siDiscord, link: "https://discord.sgc.se" },
-		{ name: "Instagram", icon: siInstagram, link: "https://www.instagram.com/sgckontot/" },
-		{ name: "Youtube", icon: siYoutube, link: "https://www.youtube.com/@onlineforeningensgc" },
-		{ name: "X", icon: siX, link: "https://x.com/sgckontot/" },
-		{ name: "Facebook", icon: siFacebook, link: "https://www.facebook.com/people/Onlinef%C3%B6reningen-SGC/61554997371254/" },
-		{ name: "Github", icon: siGithub, link: "https://github.com/onlinesgc" }
+		{ name: 'Email', icon: Mail, link: 'mailto:kontakt@sgc.se' },
+		{ name: 'Bli medlem', icon: SverokIcon, link: 'https://sverok.se' },
+		{ name: 'Discord', icon: siDiscord, link: 'https://discord.sgc.se' },
+		{ name: 'Instagram', icon: siInstagram, link: 'https://www.instagram.com/sgckontot/' },
+		{ name: 'Youtube', icon: siYoutube, link: 'https://www.youtube.com/@onlineforeningensgc' },
+		{ name: 'X', icon: siX, link: 'https://x.com/sgckontot/' },
+		{ name: 'Facebook', icon: siFacebook, link: 'https://www.facebook.com/people/Onlinef%C3%B6reningen-SGC/61554997371254/' },
+		{ name: 'Github', icon: siGithub, link: 'https://github.com/onlinesgc' },
 	];
 </script>
 
