@@ -2,9 +2,7 @@
 	import GruppFoto from '$lib/assets/Gruppfoto.webp';
 	import ContactCard from '$lib/components/ContactCard.svelte';
 	import Logo from '$lib/components/Logo.svelte';
-	import { mode } from 'mode-watcher';
-	import SverokIconBlack from '$lib/assets/icons/sverok_black.svg';
-	import SverokIconWhite from '$lib/assets/icons/sverok_white.svg';
+	import SverokIcon from '$lib/assets/icons/SverokIcon.svelte';
 	import DiscordWidget from '$lib/components/DiscordWidget.svelte';
 	import { siDiscord } from 'simple-icons';
 
@@ -41,7 +39,7 @@
 			</div>
 			<div class="flex justify-around">
 				<ContactCard name="Discord" Icon={siDiscord} link="https://discord.sgc.se" />
-				<ContactCard name="Bli medlem" Icon={mode.current === 'light' ? SverokIconBlack : SverokIconWhite} link="https://sverok.se" />
+				<ContactCard name="Bli medlem" Icon={SverokIcon} link="https://sverok.se" />
 			</div>
 		</div>
 	</div>

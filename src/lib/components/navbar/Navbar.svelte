@@ -28,7 +28,7 @@
 		more: [
 			{ name: 'Information', href: '/information' },
 			{ name: 'Samarbeten', href: '/samarbeten' },
-			{ name: 'Servrar', href: '/servrar' },
+			{ name: 'Minecraft Servrar', href: '/minecraft-servrar' },
 		],
 		end: [{ name: 'Kontakt', href: '/kontakt' }],
 	};
