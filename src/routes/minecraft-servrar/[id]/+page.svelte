@@ -6,4 +6,4 @@
 	const server = $derived(data.server as ServersRecord);
 </script>
 
-<DetailPage record={server} />
+<DetailPage record={server} backhref="/minecraft-servrar"/>

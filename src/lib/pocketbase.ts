@@ -7,7 +7,8 @@ export async function getList<T>(pb: PocketBase, collection: string) {
 
 export async function getOne<T>(pb: PocketBase, collection: string, id: string) {
 	try {
-		return await pb.collection(collection).getOne<T>(id);
+		const record = await pb.collection(collection).getOne<T>(id);
+		return { ...record, collectionName: collection };
 	} catch {
 		throw error(404, {
 			message: `${collection} inte hittad!`,

@@ -28,9 +28,15 @@
 	const resolvedBackhref = $derived(backhref ?? `/${record.collectionName?.toLowerCase() ?? ''}`);
 	const resolvedTitle = $derived(title ?? record.title ?? record.name ?? '');
 	const resolvedContent = $derived(record.content ?? record.description);
-	const image = $derived(record.image ? { id: record.id, filename: record.image } : null);
+	const imageFilename = $derived(record.image ? record.image : null);
 	const collectionName = $derived(record.collectionName ?? '');
-	const FilesURL = $derived(image ? `https://pocketbase.lukasabbe.com/api/files/${collectionName}/${image.id}/` : '');
+	const FileURL = $derived(`https://pocketbase.lukasabbe.com/api/files/${collectionName}/${record.id}/`);
+
+	const dateString = $derived.by(() => {
+		const created = new Date(record.created).toLocaleDateString();
+		const edited = new Date(record.updated).toLocaleDateString();
+		return created === edited ? created : `${created} · Uppdaterad: ${edited}`;
+	});
 </script>
 
 <div class="flex justify-center">
@@ -38,12 +44,16 @@
 		<ArrowLeft class="h-full w-full" />
 	</a>
 	<div class="flex w-full flex-col p-8">
-		{#if image}
+		{#if imageFilename}
 			<div class="flex w-full justify-center">
-				<img src={FilesURL + image.filename} alt="" class="mb-4 max-w-[80vw] rounded-xl" />
+				<img src={FileURL + imageFilename} alt="" class="mb-4 max-w-[80vw] rounded-xl" />
 			</div>
 		{/if}
-		<h1 class="Sansumu m-4 text-center text-6xl font-bold text-primary-500">{resolvedTitle}</h1>
+		<div class="w-full text-center">
+			<h1 class="Sansumu m-4 text-6xl font-bold text-primary-500">{resolvedTitle}</h1>
+
+			<span class="markdown">{dateString}</span>
+		</div>
 		<hr class="mx-auto my-6 w-[60vw] border-gray-400" />
 		<div class="flex w-full justify-center">
 			<div class="max-w-[60vw]">
@@ -55,10 +65,13 @@
 				{/if}
 			</div>
 		</div>
-		<div class="flex flex-col gap-4">
-			{#each record.attachments ?? [] as attachment}
-				<Card target="_blank" href={FilesURL + attachment} title={attachment} />
-			{/each}
+
+		<div class="flex w-full justify-center">
+			<div class="flex w-[60vw] flex-col gap-4">
+				{#each record.attachments ?? [] as attachment}
+					<Card target="_blank" href={FileURL + attachment} title={attachment} />
+				{/each}
+			</div>
 		</div>
 	</div>
 </div>
