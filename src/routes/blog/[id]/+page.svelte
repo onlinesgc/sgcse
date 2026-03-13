@@ -6,4 +6,4 @@
 	const blogPost = $derived(data.blogPost as BlogRecord);
 </script>
 
-<DetailPage backHref="/blog" title={blogPost.title ?? ''} content={blogPost.content} />
+<DetailPage record={blogPost} />
