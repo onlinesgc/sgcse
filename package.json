@@ -20,6 +20,7 @@
   "dependencies": {
     "lucide-svelte": "^0.577.0",
     "mode-watcher": "^1.1.0",
+    "motion-sv": "^0.1.10",
     "pocketbase": "^0.26.8",
     "runed": "^0.37.1",
     "simple-icons": "^16.11.0",
@@ -28,7 +29,7 @@
   "devDependencies": {
     "@eslint/compat": "^2.0.3",
     "@eslint/js": "^10.0.1",
-    "@lucide/svelte": "^0.577.0",
+    "@lucide/svelte": "^0.561.0",
     "@sveltejs/adapter-auto": "^7.0.1",
     "@sveltejs/adapter-node": "^5.5.4",
     "@sveltejs/kit": "^2.54.0",

@@ -5,6 +5,7 @@
 	import Logo from '$lib/components/Logo.svelte';
 	import NavLink from '$lib/components/navbar/NavLink.svelte';
 	import NavDropdown from '$lib/components/navbar/NavDropdown.svelte';
+	import AnimatedThemeToggler from '../magic/animated-theme-toggler/animated-theme-toggler.svelte';
 
 	let isDark = $state(false);
 	let menuOpen = $state(false);
@@ -60,13 +61,7 @@
 			<NavLink {...link} />
 		{/each}
 
-		<button onclick={toggleTheme} class="ml-4 p-2">
-			{#if isDark}
-				<Sun class="h-5 w-5" />
-			{:else}
-				<Moon class="h-5 w-5" />
-			{/if}
-		</button>
+		<AnimatedThemeToggler />
 	</div>
 </nav>
 
@@ -84,12 +79,6 @@
 			<NavLink {...link} mobile />
 		{/each}
 
-		<button onclick={toggleTheme} class="mt-2 flex items-center py-2">
-			{#if isDark}
-				<Sun class="mr-2 h-5 w-5" /> Ljust läge
-			{:else}
-				<Moon class="mr-2 h-5 w-5" /> Mörkt läge
-			{/if}
-		</button>
+		<AnimatedThemeToggler />
 	</div>
 {/if}
