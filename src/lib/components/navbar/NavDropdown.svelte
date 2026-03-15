@@ -30,7 +30,7 @@
 	</button>
 
 	{#if open}
-		<div class="absolute right-0 mt-2 w-48 rounded-lg bg-white py-2 shadow-lg dark:bg-[#121212]">
+		<div class="absolute right-0 mt-2 w-48 rounded-lg bg-white py-2 shadow-lg dark:bg-background">
 			{#each items as item}
 				<a href={item.href} class="block px-4 py-2 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800">
 					{item.name}

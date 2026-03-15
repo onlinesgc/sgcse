@@ -18,12 +18,14 @@
     "typegen": "pocketbase-typegen --out src/lib/types/pocketbase-types.ts --env"
   },
   "dependencies": {
+    "fastest-levenshtein": "^1.0.16",
     "lucide-svelte": "^0.577.0",
     "mode-watcher": "^1.1.0",
     "pocketbase": "^0.26.8",
     "runed": "^0.37.1",
     "simple-icons": "^16.11.0",
-    "svelte": "^5.53.11"
+    "svelte": "^5.53.11",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@eslint/compat": "^2.0.3",

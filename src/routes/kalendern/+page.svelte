@@ -67,7 +67,7 @@
 
 <div class="mx-auto flex min-h-[85vh] flex-col p-4 sm:p-6 lg:p-8">
 	<div
-		class="flex w-full grow flex-col rounded-2xl border border-gray-200 bg-gray-50 p-5 shadow-inner sm:p-7 dark:border-gray-800 dark:bg-[#121212]"
+		class="flex w-full grow flex-col rounded-2xl border border-gray-200 bg-gray-50 p-5 shadow-inner sm:p-7 dark:border-gray-800 dark:bg-background"
 	>
 		<div class="mb-6 flex items-center justify-between px-2">
 			<h2 class="text-2xl font-bold text-gray-800 dark:text-white">
