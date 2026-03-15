@@ -30,7 +30,7 @@
 	--color-secondary-900: #0e1123;
 	--color-secondary-950: #0b0e1b;
 
-	--color-background: #121212
+	--color-background: #121212;
 }
 
 @source '../../node_modules/flowbite/dist';
@@ -55,11 +55,11 @@
 }
 
 .markdown {
-	@apply prose prose-slate dark:prose-invert;
+	@apply prose max-w-full prose-slate dark:prose-invert;
 }
 
 .discord-clip {
-	clip-path: inset(0 round 10px)
+	clip-path: inset(0 round 10px);
 }
 
 /* MAIN PAGE IMAGE */
