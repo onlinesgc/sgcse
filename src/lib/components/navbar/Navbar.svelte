@@ -22,7 +22,6 @@
 
 	const NAV = {
 		main: [
-			{ name: 'Om oss', href: '\.' },
 			{ name: 'Nyheter', href: '/nyheter' },
 			{ name: 'Kalendern', href: '/kalendern' },
 		],
