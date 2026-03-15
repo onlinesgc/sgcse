@@ -6,10 +6,10 @@ import type PocketBase from 'pocketbase'
 import type { RecordService } from 'pocketbase'
 
 export enum Collections {
-	Blog = "Blog",
 	Calander = "Calander",
 	Collaborations = "Collaborations",
 	Information = "Information",
+	News = "News",
 	Servers = "Servers",
 	Authorigins = "_authOrigins",
 	Externalauths = "_externalAuths",
@@ -46,14 +46,6 @@ export type AuthSystemFields<T = unknown> = {
 } & BaseSystemFields<T>
 
 // Record types for each collection
-
-export type BlogRecord = {
-	content?: HTMLString
-	created: IsoAutoDateString
-	id: string
-	title?: string
-	updated: IsoAutoDateString
-}
 
 export enum CalanderTypeOptions {
 	"one-time" = "one-time",
@@ -97,6 +89,14 @@ export type InformationRecord = {
 	description?: HTMLString
 	id: string
 	image?: FileNameString
+	title?: string
+	updated: IsoAutoDateString
+}
+
+export type NewsRecord = {
+	content?: HTMLString
+	created: IsoAutoDateString
+	id: string
 	title?: string
 	updated: IsoAutoDateString
 }
@@ -162,10 +162,10 @@ export type SuperusersRecord = {
 }
 
 // Response types include system fields and match responses from the PocketBase API
-export type BlogResponse<Texpand = unknown> = Required<BlogRecord> & BaseSystemFields<Texpand>
 export type CalanderResponse<Texpand = unknown> = Required<CalanderRecord> & BaseSystemFields<Texpand>
 export type CollaborationsResponse<Texpand = unknown> = Required<CollaborationsRecord> & BaseSystemFields<Texpand>
 export type InformationResponse<Texpand = unknown> = Required<InformationRecord> & BaseSystemFields<Texpand>
+export type NewsResponse<Texpand = unknown> = Required<NewsRecord> & BaseSystemFields<Texpand>
 export type ServersResponse<Texpand = unknown> = Required<ServersRecord> & BaseSystemFields<Texpand>
 export type AuthoriginsResponse<Texpand = unknown> = Required<AuthoriginsRecord> & BaseSystemFields<Texpand>
 export type ExternalauthsResponse<Texpand = unknown> = Required<ExternalauthsRecord> & BaseSystemFields<Texpand>
@@ -176,10 +176,10 @@ export type SuperusersResponse<Texpand = unknown> = Required<SuperusersRecord> &
 // Types containing all Records and Responses, useful for creating typing helper functions
 
 export type CollectionRecords = {
-	Blog: BlogRecord
 	Calander: CalanderRecord
 	Collaborations: CollaborationsRecord
 	Information: InformationRecord
+	News: NewsRecord
 	Servers: ServersRecord
 	_authOrigins: AuthoriginsRecord
 	_externalAuths: ExternalauthsRecord
@@ -189,10 +189,10 @@ export type CollectionRecords = {
 }
 
 export type CollectionResponses = {
-	Blog: BlogResponse
 	Calander: CalanderResponse
 	Collaborations: CollaborationsResponse
 	Information: InformationResponse
+	News: NewsResponse
 	Servers: ServersResponse
 	_authOrigins: AuthoriginsResponse
 	_externalAuths: ExternalauthsResponse

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { BlogRecord } from '$lib/types/pocketbase-types';
 	import Card from '$lib/components/Card.svelte';
 
 	let { data } = $props();
@@ -13,7 +12,7 @@
 			{@const created = new Date(post.created).toLocaleDateString()}
 			{@const edited = new Date(post.updated).toLocaleDateString()}
 			{@const dateString = created === edited ? created : `${created} · Uppdaterad: ${edited}`}
-			<Card href={'/blog/' + post.id} title={post.title ?? ''}>
+			<Card href={'/nyheter/' + post.id} title={post.title ?? ''}>
 				<span class="text-gray-500">{dateString}</span>
 				{@html post.content?.substring(0, 150) + '...'}
 			</Card>

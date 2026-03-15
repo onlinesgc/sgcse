@@ -22,7 +22,7 @@
 
 	const NAV = {
 		main: [
-			{ name: 'Blog', href: '/blog' },
+			{ name: 'Nyheter', href: '/nyheter' },
 			{ name: 'Kalendern', href: '/kalendern' },
 		],
 		more: [
