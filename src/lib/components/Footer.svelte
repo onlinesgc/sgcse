@@ -2,7 +2,7 @@
 	let date = new Date();
 </script>
 
-<footer class="mt-auto bg-white dark:bg-[#121212]">
+<footer class="mt-auto bg-white dark:bg-background">
 	<div class="mx-auto flex flex-col items-center justify-between gap-4 p-4 sm:flex-row">
 		<p class="text-sm text-gray-500 dark:text-gray-400">
 			&copy; {date.getFullYear()} Onlineföreningen SGC. All rights reserved.

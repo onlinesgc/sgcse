@@ -36,7 +36,7 @@
 
 <ModeWatcher />
 
-<nav class="z-10 flex items-center justify-between bg-white px-4 py-3 shadow-xl dark:bg-[#121212]">
+<nav class="z-10 flex items-center justify-between bg-white px-4 py-3 shadow-xl dark:bg-background">
 	<a href="/">
 		<Logo />
 	</a>
@@ -71,7 +71,7 @@
 </nav>
 
 {#if menuOpen}
-	<div class="flex flex-col bg-white p-4 shadow-xl md:hidden dark:bg-[#121212]">
+	<div class="flex flex-col bg-white p-4 shadow-xl md:hidden dark:bg-background">
 		{#each NAV.main as link}
 			<NavLink {...link} mobile />
 		{/each}

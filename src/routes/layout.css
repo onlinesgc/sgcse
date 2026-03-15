@@ -29,6 +29,8 @@
 	--color-secondary-800: #131830;
 	--color-secondary-900: #0e1123;
 	--color-secondary-950: #0b0e1b;
+
+	--color-background: #121212
 }
 
 @source '../../node_modules/flowbite/dist';
