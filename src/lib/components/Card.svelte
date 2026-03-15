@@ -19,7 +19,7 @@
 	</div>
 {/snippet}
 
-<div {...props} class={props.class + " w-[80vw]"}>
+<div {...props} class={props.class ?? '' + " w-full"}>
 	{#if href}
 		<a {href} {target}>
 			{@render inner()}
