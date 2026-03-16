@@ -33,23 +33,13 @@
 <section class="mt-8 flex items-center justify-around max-md:flex-col">
 	<div class="flex flex-col gap-8 text-center">
 		<div>
-			<h1 class="Sansumu text-6xl font-bold text-primary-500 m-4">
-				Gå med i Discorden!
-			</h1>
+			<h1 class="Sansumu m-4 text-6xl font-bold text-primary-500">Gå med i Discorden!</h1>
 			<span class="markdown">Eller gå direkt med i föreningen!</span>
 		</div>
 
 		<div class="flex justify-around">
-			<ContactCard
-				name="Discord"
-				Icon={siDiscord}
-				link="https://discord.sgc.se"
-			/>
-			<ContactCard
-				name="Bli medlem"
-				Icon={SverokIcon}
-				link="https://sverok.se"
-			/>
+			<ContactCard name="Discord" Icon={siDiscord} link="https://discord.sgc.se" />
+			<ContactCard name="Bli medlem" Icon={SverokIcon} link="https://blimedlem.sgc.se" />
 		</div>
 	</div>
 
