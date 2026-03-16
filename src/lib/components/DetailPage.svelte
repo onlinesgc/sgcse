@@ -22,14 +22,14 @@
 		name: string;
 	};
 
-	interface Props {
-		record: PocketBaseRecord;
+	interface Props<T extends PocketBaseRecord> {
+		record: T;
 		backhref?: string;
 		title?: string;
 		children?: import('svelte').Snippet<[]>;
 	}
 
-	let { record, backhref, title, children }: Props = $props();
+	let { record, backhref, title, children }: Props<any> = $props();
 
 	const resolvedBackhref = $derived(backhref ?? `/${record.collectionName?.toLowerCase() ?? ''}`);
 	const resolvedTitle = $derived(title ?? record.title ?? record.name ?? '');
@@ -75,7 +75,7 @@
 		<div class="flex w-full justify-center">
 			<div class="flex w-[60vw] flex-col gap-4">
 				{#each record.attachment_names || [] as attachment}
-					<Card target="_blank" href={FileURL + attachment.id} title={attachment.name} />
+					<Card target="_blank" href={FileURL + attachment.id} title={attachment.name} id={attachment.id} />
 				{/each}
 			</div>
 		</div>
