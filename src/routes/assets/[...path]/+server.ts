@@ -10,7 +10,7 @@ export async function GET({ params, locals }) {
 	return new Response(response.body, {
 		headers: {
 			'Content-Type': response.headers.get('Content-Type') || 'application/octet-stream',
-			'Cache-Control': 'public, max-age=3600', // Highly recommended!
+			'Cache-Control': 'public, max-age=3600',
 		},
 	});
 }
