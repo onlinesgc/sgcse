@@ -67,6 +67,7 @@ export type CalanderRecord = {
 	dayOfWeek?: number
 	description: HTMLString
 	id: string
+	tid?: string
 	title: string
 	type: CalanderTypeOptions
 	updated: IsoAutoDateString
@@ -76,6 +77,7 @@ export type CalanderRecord = {
 export type CollaborationsRecord = {
 	created: IsoAutoDateString
 	description?: HTMLString
+	icon?: FileNameString
 	id: string
 	link?: string
 	name?: string
