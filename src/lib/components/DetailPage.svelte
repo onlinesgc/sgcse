@@ -12,8 +12,14 @@
 		content?: string;
 		description?: string;
 		attachments?: FileNameString[];
+		attachment_names?: PocketBaseAttchmentNames[];
 		image?: FileNameString;
 		collectionName?: string;
+	};
+
+	type PocketBaseAttchmentNames = {
+		id: string;
+		name: string;
 	};
 
 	interface Props {
@@ -30,8 +36,8 @@
 	const resolvedContent = $derived(record.content ?? record.description);
 	const imageFilename = $derived(record.image ? record.image : null);
 	const collectionName = $derived(record.collectionName ?? '');
+	const attachmentNames = $derived(record.attachment_names ?? []);
 	const FileURL = $derived(`https://pocketbase.lukasabbe.com/api/files/${collectionName}/${record.id}/`);
-
 	const dateString = $derived.by(() => {
 		const created = new Date(record.created).toLocaleDateString();
 		const edited = new Date(record.updated).toLocaleDateString();
@@ -68,8 +74,8 @@
 
 		<div class="flex w-full justify-center">
 			<div class="flex w-[60vw] flex-col gap-4">
-				{#each record.attachments ?? [] as attachment}
-					<Card target="_blank" href={FileURL + attachment} title={attachment} />
+				{#each record.attachment_names || [] as attachment}
+					<Card target="_blank" href={FileURL + attachment.id} title={attachment.name} />
 				{/each}
 			</div>
 		</div>
