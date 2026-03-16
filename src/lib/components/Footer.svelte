@@ -8,7 +8,7 @@
 			&copy; {date.getFullYear()} Onlineföreningen SGC. All rights reserved.
 		</p>
 		<div class="flex gap-4">
-			<a href="/" class="text-sm text-gray-500 hover:text-primary-500 dark:text-gray-400">Om Oss</a>
+			<a href="/information/om-oss" class="text-sm text-gray-500 hover:text-primary-500 dark:text-gray-400">Om Oss</a>
 			<a href="/kontakt" class="text-sm text-gray-500 hover:text-primary-500 dark:text-gray-400">Kontakt</a>
 		</div>
 	</div>
