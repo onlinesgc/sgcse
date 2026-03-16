@@ -46,9 +46,11 @@
 
 		{#if sortedInformation.length > 0}
 			{#each sortedInformation as info (info.id)}
-				<div transition:scale>
-					<Card href={'/information/' + info.id} title={info.title ?? 'Untitled'} />
-				</div>
+				{#if info.id != 'om-oss'}
+					<div transition:scale>
+						<Card href={'/information/' + info.id} title={info.title ?? 'Untitled'} />
+					</div>
+				{/if}
 			{/each}
 		{:else}
 			<p class="mt-4 text-center text-gray-500">Inga resultat hittade för "{params.search}"</p>
