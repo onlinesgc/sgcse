@@ -13,7 +13,7 @@
 
 	const contacts: Contact[] = [
 		{ name: 'Email', icon: Mail, link: 'mailto:kontakt@sgc.se' },
-		{ name: 'Bli medlem', icon: SverokIcon, link: 'https://sverok.se' },
+		{ name: 'Bli medlem', icon: SverokIcon, link: 'https://blimedlem.sgc.se' },
 		{ name: 'Discord', icon: siDiscord, link: 'https://discord.sgc.se' },
 		{ name: 'Instagram', icon: siInstagram, link: 'https://www.instagram.com/sgckontot/' },
 		{ name: 'Youtube', icon: siYoutube, link: 'https://www.youtube.com/@onlineforeningensgc' },
