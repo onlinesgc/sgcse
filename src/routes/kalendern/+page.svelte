@@ -75,19 +75,19 @@
 			</h2>
 			<div class="flex gap-2">
 				<button
-					class="flex items-center rounded border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-700 dark:bg-[#1a1a1a] dark:text-white dark:hover:bg-gray-700"
+					class="flex items-center rounded border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-700 dark:bg-[#1a1a1a] dark:text-white dark:hover:bg-gray-700 cursor-pointer"
 					onclick={prevWeek}
 				>
 					<ChevronLeft class="mr-1 h-4 w-4" /> Föregående
 				</button>
 				<button
-					class="flex items-center rounded border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-700 dark:bg-[#1a1a1a] dark:text-white dark:hover:bg-gray-700"
+					class="flex items-center rounded border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-700 dark:bg-[#1a1a1a] dark:text-white dark:hover:bg-gray-700 cursor-pointer"
 					onclick={() => (baseDate = new SvelteDate())}
 				>
 					Idag
 				</button>
 				<button
-					class="flex items-center rounded border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-700 dark:bg-[#1a1a1a] dark:text-white dark:hover:bg-gray-700"
+					class="flex items-center rounded border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-700 dark:bg-[#1a1a1a] dark:text-white dark:hover:bg-gray-700 cursor-pointer"
 					onclick={nextWeek}
 				>
 					Nästa <ChevronRight class="ml-1 h-4 w-4" />

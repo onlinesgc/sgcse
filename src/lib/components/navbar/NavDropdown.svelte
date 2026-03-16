@@ -24,7 +24,7 @@
 </script>
 
 <div class="relative" bind:this={ref}>
-	<button class="flex items-center text-xl hover:text-primary-500" onclick={() => (open = !open)}>
+	<button class="flex items-center text-xl hover:text-primary-500 cursor-pointer" onclick={() => (open = !open)}>
 		{title}
 		<ChevronDown class="ml-1 h-4 w-4" />
 	</button>

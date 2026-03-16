@@ -23,6 +23,7 @@
 	const NAV = {
 		main: [
 			{ name: 'Nyheter', href: '/nyheter' },
+			{ name: 'Om föreningen', href: '/information/p3r741vwo8xets3' },
 			{ name: 'Kalendern', href: '/kalendern' },
 		],
 		more: [
@@ -60,7 +61,7 @@
 			<NavLink {...link} />
 		{/each}
 
-		<button onclick={toggleTheme} class="ml-4 p-2">
+		<button onclick={toggleTheme} class="ml-4 p-2 cursor-pointer">
 			{#if isDark}
 				<Sun class="h-5 w-5" />
 			{:else}
@@ -84,7 +85,7 @@
 			<NavLink {...link} mobile />
 		{/each}
 
-		<button onclick={toggleTheme} class="mt-2 flex items-center py-2">
+		<button onclick={toggleTheme} class="mt-2 flex items-center py-2 cursor-pointer">
 			{#if isDark}
 				<Sun class="mr-2 h-5 w-5" /> Ljust läge
 			{:else}

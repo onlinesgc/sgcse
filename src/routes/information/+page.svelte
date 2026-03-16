@@ -3,6 +3,7 @@
 	import { useSearchParams } from 'runed/kit';
 	import { z } from 'zod';
 	import { distance } from 'fastest-levenshtein';
+	import { scale } from 'svelte/transition';
 
 	const SearchSchema = z.object({
 		search: z.string().default(''),
@@ -45,7 +46,9 @@
 
 		{#if sortedInformation.length > 0}
 			{#each sortedInformation as info (info.id)}
-				<Card href={'/information/' + info.id} title={info.title ?? 'Untitled'} />
+				<div transition:scale>
+					<Card href={'/information/' + info.id} title={info.title ?? 'Untitled'} />
+				</div>
 			{/each}
 		{:else}
 			<p class="mt-4 text-center text-gray-500">Inga resultat hittade för "{params.search}"</p>
