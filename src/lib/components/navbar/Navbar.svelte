@@ -20,16 +20,20 @@
 		isDark = !isDark;
 	}
 
+	function closeMenu() {
+		menuOpen = false;
+	}
+
 	const NAV = {
 		main: [
 			{ name: 'Nyheter', href: '/nyheter' },
-			{ name: 'Om föreningen', href: '/information/p3r741vwo8xets3' },
+			{ name: 'Om oss', href: '/information/om-oss' },
 			{ name: 'Kalendern', href: '/kalendern' },
 		],
 		more: [
 			{ name: 'Information', href: '/information' },
 			{ name: 'Samarbeten', href: '/samarbeten' },
-			{ name: 'Minecraft Servrar', href: '/minecraft-servrar' },
+			{ name: 'Servrar', href: '/servrar' },
 		],
 		end: [{ name: 'Kontakt', href: '/kontakt' }],
 	};
@@ -37,7 +41,7 @@
 
 <ModeWatcher />
 
-<nav class="z-10 flex items-center justify-between bg-white px-4 py-3 shadow-xl dark:bg-background">
+<nav class="relative z-10 flex items-center justify-between bg-white px-4 py-3 shadow-xl dark:bg-background">
 	<a href="/">
 		<Logo />
 	</a>
@@ -55,13 +59,13 @@
 			<NavLink {...link} />
 		{/each}
 
-		<NavDropdown title="Mer" items={NAV.more} />
+		<NavDropdown title="Mer" items={NAV.more} onClick={closeMenu} />
 
 		{#each NAV.end as link}
 			<NavLink {...link} />
 		{/each}
 
-		<button onclick={toggleTheme} class="ml-4 p-2 cursor-pointer">
+		<button onclick={toggleTheme} class="ml-4 cursor-pointer p-2">
 			{#if isDark}
 				<Sun class="h-5 w-5" />
 			{:else}
@@ -69,28 +73,34 @@
 			{/if}
 		</button>
 	</div>
+
+	{#if menuOpen}
+		<div class="absolute top-full left-0 z-50 flex w-full flex-col bg-white p-4 shadow-xl md:hidden dark:bg-background">
+			{#each NAV.main as link}
+				<NavLink {...link} mobile onclick={closeMenu} />
+			{/each}
+
+			<div class="mt-1 mb-1">
+				<NavDropdown title="Mer" items={NAV.more} mobile onClick={closeMenu} />
+			</div>
+
+			{#each NAV.end as link}
+				<NavLink {...link} mobile onclick={closeMenu} />
+			{/each}
+
+			<button
+				onclick={() => {
+					toggleTheme();
+					closeMenu();
+				}}
+				class="mt-3 flex items-center py-2"
+			>
+				{#if isDark}
+					<Sun class="mr-2 h-5 w-5" /> Ljust läge
+				{:else}
+					<Moon class="mr-2 h-5 w-5" /> Mörkt läge
+				{/if}
+			</button>
+		</div>
+	{/if}
 </nav>
-
-{#if menuOpen}
-	<div class="flex flex-col bg-white p-4 shadow-xl md:hidden dark:bg-background">
-		{#each NAV.main as link}
-			<NavLink {...link} mobile />
-		{/each}
-
-		{#each NAV.more as link}
-			<NavLink {...link} mobile />
-		{/each}
-
-		{#each NAV.end as link}
-			<NavLink {...link} mobile />
-		{/each}
-
-		<button onclick={toggleTheme} class="mt-2 flex items-center py-2 cursor-pointer">
-			{#if isDark}
-				<Sun class="mr-2 h-5 w-5" /> Ljust läge
-			{:else}
-				<Moon class="mr-2 h-5 w-5" /> Mörkt läge
-			{/if}
-		</button>
-	</div>
-{/if}
