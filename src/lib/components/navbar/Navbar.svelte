@@ -6,6 +6,7 @@
 	import NavLink from '$lib/components/navbar/NavLink.svelte';
 	import NavDropdown from '$lib/components/navbar/NavDropdown.svelte';
 	import AnimatedThemeToggler from '../animated-theme-toggler.svelte';
+	import { Moon, Sun } from '@lucide/svelte';
 
 	let isDark = $state(false);
 	let menuOpen = $state(false);
@@ -90,7 +91,11 @@
 				}}
 				class="mt-3 flex items-center py-2"
 			>
-				<AnimatedThemeToggler />
+				{#if isDark}
+					<Sun class="mr-2 h-5 w-5" /> Ljust läge
+				{:else}
+					<Moon class="mr-2 h-5 w-5" /> Mörkt läge
+				{/if}
 			</button>
 		</div>
 	{/if}
