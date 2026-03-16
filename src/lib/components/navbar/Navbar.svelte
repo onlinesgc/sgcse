@@ -1,10 +1,12 @@
 <script lang="ts">
 	import { ModeWatcher, toggleMode } from 'mode-watcher';
-	import { Sun, Moon, Menu, X } from 'lucide-svelte';
+	import { Menu, X } from 'lucide-svelte';
 
 	import Logo from '$lib/components/Logo.svelte';
 	import NavLink from '$lib/components/navbar/NavLink.svelte';
 	import NavDropdown from '$lib/components/navbar/NavDropdown.svelte';
+	import AnimatedThemeToggler from '../animated-theme-toggler.svelte';
+	import { Moon, Sun } from '@lucide/svelte';
 
 	let isDark = $state(false);
 	let menuOpen = $state(false);
@@ -65,13 +67,7 @@
 			<NavLink {...link} />
 		{/each}
 
-		<button onclick={toggleTheme} class="ml-4 cursor-pointer p-2">
-			{#if isDark}
-				<Sun class="h-5 w-5" />
-			{:else}
-				<Moon class="h-5 w-5" />
-			{/if}
-		</button>
+		<AnimatedThemeToggler />
 	</div>
 
 	{#if menuOpen}
