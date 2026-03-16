@@ -1,6 +1,7 @@
 <script lang="ts">
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.webp';
+	import { page } from '$app/state';
 	import GroupPicture from '$lib/assets/Gruppfoto.webp';
 	import Footer from '$lib/components/Footer.svelte';
 	import Navbar from '$lib/components/navbar/Navbar.svelte';
@@ -23,7 +24,7 @@
 		content="Vi är en medlemsdriven, HBTQ-vänlig förening och digitalt forum för ungdomar. Vi hänger främst på vår Discord som är öppen för alla!"
 	/>
 
-	<meta property="og:image" content={GroupPicture} />
+	<meta property="og:image" content="{page.url.origin}{GroupPicture}" />
 </svelte:head>
 
 <svelte:body />
