@@ -23,6 +23,7 @@
 	const NAV = {
 		main: [
 			{ name: 'Nyheter', href: '/nyheter' },
+			{ name: 'Om föreningen', href: '/information/p3r741vwo8xets3' },
 			{ name: 'Kalendern', href: '/kalendern' },
 		],
 		more: [
