@@ -39,4 +39,7 @@
 	<p class="line-clamp-2 text-xs font-normal text-gray-600 dark:text-gray-400">
 		{@html event.description}
 	</p>
+	<div class="mt-2 flex items-center gap-2">
+		<span class="text-xs text-gray-500 dark:text-gray-400">Tid: {event.tid}</span>
+	</div>
 </button>
