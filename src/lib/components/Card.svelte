@@ -4,10 +4,11 @@
 		title: string;
 		target?: string;
 		children?: import('svelte').Snippet<[]>;
+		id: string;
 		[key: string]: any;
 	}
 
-	let { target, href, title, children, ...props }: Props = $props();
+	let { target, href, title, children, id, ...props }: Props = $props();
 </script>
 
 {#snippet inner()}
@@ -19,7 +20,7 @@
 	</div>
 {/snippet}
 
-<div {...props} class={props.class ?? '' + " w-full"}>
+<div {...props} {id} title={id} class="{props.class ?? ''} w-full">
 	{#if href}
 		<a {href} {target}>
 			{@render inner()}

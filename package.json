@@ -15,7 +15,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig tsconfig.json --watch",
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
-		"typegen": "pocketbase-typegen --out src/lib/types/pocketbase-types.ts --env"
+		"typegen": "npx pocketbase-typegen --out src/lib/types/pocketbase-types.ts --env"
 	},
 	"dependencies": {
 		"fastest-levenshtein": "^1.0.16",

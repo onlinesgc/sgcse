@@ -85,7 +85,8 @@ export type CollaborationsRecord = {
 	z_index?: number
 }
 
-export type InformationRecord = {
+export type InformationRecord<Tattachment_names = unknown> = {
+	attachment_names?: null | Tattachment_names
 	attachments?: FileNameString[]
 	created: IsoAutoDateString
 	description?: HTMLString
@@ -166,7 +167,7 @@ export type SuperusersRecord = {
 // Response types include system fields and match responses from the PocketBase API
 export type CalanderResponse<Texpand = unknown> = Required<CalanderRecord> & BaseSystemFields<Texpand>
 export type CollaborationsResponse<Texpand = unknown> = Required<CollaborationsRecord> & BaseSystemFields<Texpand>
-export type InformationResponse<Texpand = unknown> = Required<InformationRecord> & BaseSystemFields<Texpand>
+export type InformationResponse<Tattachment_names = unknown, Texpand = unknown> = Required<InformationRecord<Tattachment_names>> & BaseSystemFields<Texpand>
 export type NewsResponse<Texpand = unknown> = Required<NewsRecord> & BaseSystemFields<Texpand>
 export type ServersResponse<Texpand = unknown> = Required<ServersRecord> & BaseSystemFields<Texpand>
 export type AuthoriginsResponse<Texpand = unknown> = Required<AuthoriginsRecord> & BaseSystemFields<Texpand>

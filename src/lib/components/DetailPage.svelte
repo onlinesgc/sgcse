@@ -12,26 +12,32 @@
 		content?: string;
 		description?: string;
 		attachments?: FileNameString[];
+		attachment_names?: PocketBaseAttchmentNames[];
 		image?: FileNameString;
 		collectionName?: string;
 	};
 
-	interface Props {
-		record: PocketBaseRecord;
+	type PocketBaseAttchmentNames = {
+		id: string;
+		name: string;
+	};
+
+	interface Props<T extends PocketBaseRecord> {
+		record: T;
 		backhref?: string;
 		title?: string;
 		children?: import('svelte').Snippet<[]>;
 	}
 
-	let { record, backhref, title, children }: Props = $props();
+	let { record, backhref, title, children }: Props<any> = $props();
 
 	const resolvedBackhref = $derived(backhref ?? `/${record.collectionName?.toLowerCase() ?? ''}`);
 	const resolvedTitle = $derived(title ?? record.title ?? record.name ?? '');
 	const resolvedContent = $derived(record.content ?? record.description);
 	const imageFilename = $derived(record.image ? record.image : null);
 	const collectionName = $derived(record.collectionName ?? '');
+	const attachmentNames = $derived(record.attachment_names ?? []);
 	const FileURL = $derived(`https://pocketbase.lukasabbe.com/api/files/${collectionName}/${record.id}/`);
-
 	const dateString = $derived.by(() => {
 		const created = new Date(record.created).toLocaleDateString();
 		const edited = new Date(record.updated).toLocaleDateString();
@@ -68,8 +74,8 @@
 
 		<div class="flex w-full justify-center">
 			<div class="flex w-[60vw] flex-col gap-4">
-				{#each record.attachments ?? [] as attachment}
-					<Card target="_blank" href={FileURL + attachment} title={attachment} />
+				{#each record.attachment_names || [] as attachment}
+					<Card target="_blank" href={FileURL + attachment.id} title={attachment.name} id={attachment.id} />
 				{/each}
 			</div>
 		</div>
