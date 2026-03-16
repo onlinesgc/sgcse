@@ -36,8 +36,7 @@
 	const resolvedContent = $derived(record.content ?? record.description);
 	const imageFilename = $derived(record.image ? record.image : null);
 	const collectionName = $derived(record.collectionName ?? '');
-	const attachmentNames = $derived(record.attachment_names ?? []);
-	const FileURL = $derived(`https://pocketbase.lukasabbe.com/api/files/${collectionName}/${record.id}/`);
+	const FileURL = $derived(`/assets/${collectionName}/${record.id}/`);
 	const dateString = $derived.by(() => {
 		const created = new Date(record.created).toLocaleDateString();
 		const edited = new Date(record.updated).toLocaleDateString();
