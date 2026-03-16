@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { ModeWatcher, toggleMode } from 'mode-watcher';
-	import { Sun, Moon, Menu, X } from 'lucide-svelte';
+	import { Menu, X } from 'lucide-svelte';
 
 	import Logo from '$lib/components/Logo.svelte';
 	import NavLink from '$lib/components/navbar/NavLink.svelte';
 	import NavDropdown from '$lib/components/navbar/NavDropdown.svelte';
-	import AnimatedThemeToggler from '../magic/animated-theme-toggler/animated-theme-toggler.svelte';
+	import AnimatedThemeToggler from '../animated-theme-toggler.svelte';
 
 	let isDark = $state(false);
 	let menuOpen = $state(false);
@@ -21,15 +21,20 @@
 		isDark = !isDark;
 	}
 
+	function closeMenu() {
+		menuOpen = false;
+	}
+
 	const NAV = {
 		main: [
-			{ name: 'Blog', href: '/blog' },
+			{ name: 'Nyheter', href: '/nyheter' },
+			{ name: 'Om oss', href: '/information/om-oss' },
 			{ name: 'Kalendern', href: '/kalendern' },
 		],
 		more: [
 			{ name: 'Information', href: '/information' },
 			{ name: 'Samarbeten', href: '/samarbeten' },
-			{ name: 'Minecraft Servrar', href: '/minecraft-servrar' },
+			{ name: 'Servrar', href: '/servrar' },
 		],
 		end: [{ name: 'Kontakt', href: '/kontakt' }],
 	};
@@ -37,7 +42,7 @@
 
 <ModeWatcher />
 
-<nav class="z-10 flex items-center justify-between bg-white px-4 py-3 shadow-xl dark:bg-[#121212]">
+<nav class="relative z-10 flex items-center justify-between bg-white px-4 py-3 shadow-xl dark:bg-background">
 	<a href="/">
 		<Logo />
 	</a>
@@ -55,7 +60,7 @@
 			<NavLink {...link} />
 		{/each}
 
-		<NavDropdown title="Mer" items={NAV.more} />
+		<NavDropdown title="Mer" items={NAV.more} onClick={closeMenu} />
 
 		{#each NAV.end as link}
 			<NavLink {...link} />
@@ -63,22 +68,30 @@
 
 		<AnimatedThemeToggler />
 	</div>
+
+	{#if menuOpen}
+		<div class="absolute top-full left-0 z-50 flex w-full flex-col bg-white p-4 shadow-xl md:hidden dark:bg-background">
+			{#each NAV.main as link}
+				<NavLink {...link} mobile onclick={closeMenu} />
+			{/each}
+
+			<div class="mt-1 mb-1">
+				<NavDropdown title="Mer" items={NAV.more} mobile onClick={closeMenu} />
+			</div>
+
+			{#each NAV.end as link}
+				<NavLink {...link} mobile onclick={closeMenu} />
+			{/each}
+
+			<button
+				onclick={() => {
+					toggleTheme();
+					closeMenu();
+				}}
+				class="mt-3 flex items-center py-2"
+			>
+				<AnimatedThemeToggler />
+			</button>
+		</div>
+	{/if}
 </nav>
-
-{#if menuOpen}
-	<div class="flex flex-col bg-white p-4 shadow-xl md:hidden dark:bg-[#121212]">
-		{#each NAV.main as link}
-			<NavLink {...link} mobile />
-		{/each}
-
-		{#each NAV.more as link}
-			<NavLink {...link} mobile />
-		{/each}
-
-		{#each NAV.end as link}
-			<NavLink {...link} mobile />
-		{/each}
-
-		<AnimatedThemeToggler />
-	</div>
-{/if}

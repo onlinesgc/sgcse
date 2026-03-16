@@ -24,7 +24,6 @@
 </script>
 
 {#if open}
-	<!-- svelte-ignore a11y_no_static_element_interactions a11y_click_events_have_key_events -->
 	<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50" onclick={close} role="presentation">
 		<!-- svelte-ignore a11y_click_events_have_key_events -->
 		<div
@@ -35,7 +34,7 @@
 			aria-labelledby="modal-title"
 			tabindex="-1"
 		>
-			<button class="absolute top-4 right-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded p-1" onclick={close}>
+			<button class="absolute top-4 right-4 cursor-pointer rounded p-1 hover:bg-gray-100 dark:hover:bg-gray-700" onclick={close}>
 				<X class="h-5 w-5" />
 			</button>
 			<h2 id="modal-title" class="mb-4 text-xl font-bold">{event?.title || 'Händelsedetaljer'}</h2>
@@ -60,6 +59,10 @@
 					{:else}
 						<p class="text-gray-400 italic">Inga ytterligare detaljer angivna.</p>
 					{/if}
+				</div>
+
+				<div class="mt-2 flex items-center gap-2">
+					<span class="text-xs text-gray-500 dark:text-gray-400">Tid: {event?.tid}</span>
 				</div>
 			</div>
 		</div>

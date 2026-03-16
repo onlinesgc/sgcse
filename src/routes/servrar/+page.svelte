@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import type { ServersRecord } from '$lib/types/pocketbase-types';
 	import Card from '$lib/components/Card.svelte';
 
 	let { data } = $props();
@@ -22,7 +21,7 @@
 <div class="flex justify-center">
 	<div class="mt-8 flex max-w-[80vw] flex-col gap-8">
 		{#each servers as server (server.id)}
-			<Card href={'/minecraft-servrar/' + server.id} title={server.name ?? ''}>
+			<Card href={'/servrar/' + server.id} title={server.name ?? ''}>
 				<h2 class="text-xl">
 					<span class="font-bold">Ip:</span>
 					<span>{server.ip}</span>
