@@ -50,7 +50,7 @@
 				{/each}
 			</div>
 		{:else}
-			<div class="absolute right-0 mt-2 w-48 rounded-lg bg-white py-2 shadow-lg dark:bg-background">
+			<div class="absolute -left-4 mt-2 w-48 rounded-lg bg-white py-2 shadow-lg dark:bg-background">
 				{#each items as item}
 					<a
 						href={item.href}
