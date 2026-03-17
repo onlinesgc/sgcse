@@ -12,9 +12,9 @@
 			{@const created = new Date(post.created).toLocaleDateString()}
 			{@const edited = new Date(post.updated).toLocaleDateString()}
 			{@const dateString = created === edited ? created : `${created} · Uppdaterad: ${edited}`}
-			<Card href={'/nyheter/' + post.id} title={post.title ?? ''}>
+			<Card href={'/nyheter/' + post.id} title={post.title ?? ''} id={post.id}>
 				<span class="text-gray-500">{dateString}</span>
-				{@html post.content?.substring(0, 150) + '...'}
+				<span class="markdown">{@html post.content?.substring(0, 150) + '...'}</span>
 			</Card>
 		{/each}
 	</div>

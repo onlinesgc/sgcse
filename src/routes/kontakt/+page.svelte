@@ -1,7 +1,7 @@
 <script lang="ts">
 	import ContactCard from '$lib/components/ContactCard.svelte';
 	import { Mail } from 'lucide-svelte';
-	import { siDiscord, siX, siGithub, siInstagram, siYoutube, siFacebook } from 'simple-icons';
+	import { siDiscord, siX, siGithub, siInstagram, siYoutube, siFacebook, siTiktok } from 'simple-icons';
 	import SverokIcon from '$lib/assets/icons/SverokIcon.svelte';
 	import type { Component } from 'svelte';
 
@@ -20,6 +20,7 @@
 		{ name: 'X', icon: siX, link: 'https://x.com/sgckontot/' },
 		{ name: 'Facebook', icon: siFacebook, link: 'https://www.facebook.com/people/Onlinef%C3%B6reningen-SGC/61554997371254/' },
 		{ name: 'Github', icon: siGithub, link: 'https://github.com/onlinesgc' },
+		{ name: 'Tiktok', icon: siTiktok, link: 'https://www.tiktok.com/@sgckontot' },
 	];
 </script>
 

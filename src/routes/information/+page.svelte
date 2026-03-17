@@ -17,7 +17,13 @@
 	let sortedInformation = $derived.by(() => {
 		const query = params.search.trim().toLowerCase();
 
-		if (!query) return information;
+		if (!query) {
+			return [...information].sort((a, b) => {
+				if (a.id === 'om-oss') return -1;
+				if (b.id === 'om-oss') return 1;
+				return 0;
+			});
+		}
 
 		const mapped = information.map((item) => {
 			const title = item.title?.toLowerCase() ?? '';
@@ -30,7 +36,11 @@
 
 		return mapped
 			.filter((obj) => obj.isValid)
-			.sort((a, b) => a.dist - b.dist)
+			.sort((a, b) => {
+				if (a.item.id === 'om-oss') return -1;
+				if (b.item.id === 'om-oss') return 1;
+				return a.dist - b.dist;
+			})
 			.map((obj) => obj.item);
 	});
 </script>
@@ -46,12 +56,19 @@
 
 		{#if sortedInformation.length > 0}
 			{#each sortedInformation as info (info.id)}
-				{#if info.id != 'om-oss'}
-					<div transition:scale>
-						<Card href={'/information/' + info.id} title={info.title ?? 'Untitled'} />
-					</div>
-				{/if}
+				<div transition:scale>
+					<Card href={'/information/' + info.id} title={info.title ?? 'Untitled'} id={info.id}>
+						<span class="markdown">{@html info.description?.substring(0, 400) + '...'}</span>
+					</Card>
+				</div>
 			{/each}
+			<div transition:scale>
+				<Card href="/samarbeten" title="Samarbeten" id="samarbeten" />
+				<span class="markdown">Vi har samarbeten med flera olika föreningar och aktörer. Läs mer om de här.</span>
+			</div>
+			<div transition:scale>
+				<Card href="/servrar" title="Servrar" id="servrar" />
+			</div>
 		{:else}
 			<p class="mt-4 text-center text-gray-500">Inga resultat hittade för "{params.search}"</p>
 		{/if}

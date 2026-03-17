@@ -13,6 +13,7 @@
 
 	let showModal = $state(false);
 	let selectedEvent = $state<CalanderRecord | null>(null);
+	let currentWeekNumber = $derived(getWeekNumber(baseDate));
 
 	let weekDays = $derived.by(() => {
 		const startOfWeek = new SvelteDate(baseDate);
@@ -63,6 +64,15 @@
 		selectedEvent = event;
 		showModal = true;
 	}
+
+	function getWeekNumber(date: Date) {
+		const target = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+		const dayNum = target.getUTCDay() || 7;
+		target.setUTCDate(target.getUTCDate() + 4 - dayNum);
+		const yearStart = new Date(Date.UTC(target.getUTCFullYear(), 0, 1));
+		const diffInDays = (target.getTime() - yearStart.getTime()) / 86400000;
+		return Math.ceil((diffInDays + 1) / 7);
+	}
 </script>
 
 <div class="mx-auto flex min-h-[85vh] flex-col p-4 sm:p-6 lg:p-8">
@@ -70,24 +80,29 @@
 		class="flex w-full grow flex-col rounded-2xl border border-gray-200 bg-gray-50 p-5 shadow-inner sm:p-7 dark:border-gray-800 dark:bg-background"
 	>
 		<div class="mb-6 flex items-center justify-between px-2">
-			<h2 class="text-2xl font-bold text-gray-800 dark:text-white">
-				{currentMonthDisplay}
-			</h2>
+			<div class="flex items-baseline gap-3">
+				<h2 class="text-2xl font-bold text-gray-800 dark:text-white">
+					{currentMonthDisplay}
+				</h2>
+				<span class="rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+					Vecka {currentWeekNumber}
+				</span>
+			</div>
 			<div class="flex gap-2">
 				<button
-					class="flex items-center rounded border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-700 dark:bg-[#1a1a1a] dark:text-white dark:hover:bg-gray-700 cursor-pointer"
+					class="flex cursor-pointer items-center rounded border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-700 dark:bg-[#1a1a1a] dark:text-white dark:hover:bg-gray-700"
 					onclick={prevWeek}
 				>
 					<ChevronLeft class="mr-1 h-4 w-4" /> Föregående
 				</button>
 				<button
-					class="flex items-center rounded border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-700 dark:bg-[#1a1a1a] dark:text-white dark:hover:bg-gray-700 cursor-pointer"
+					class="flex cursor-pointer items-center rounded border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-700 dark:bg-[#1a1a1a] dark:text-white dark:hover:bg-gray-700"
 					onclick={() => (baseDate = new SvelteDate())}
 				>
 					Idag
 				</button>
 				<button
-					class="flex items-center rounded border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-700 dark:bg-[#1a1a1a] dark:text-white dark:hover:bg-gray-700 cursor-pointer"
+					class="flex cursor-pointer items-center rounded border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-700 dark:bg-[#1a1a1a] dark:text-white dark:hover:bg-gray-700"
 					onclick={nextWeek}
 				>
 					Nästa <ChevronRight class="ml-1 h-4 w-4" />
