@@ -33,8 +33,8 @@
 <section class="mt-8 flex items-center justify-around max-md:flex-col">
 	<div class="flex flex-col gap-8 text-center">
 		<div>
-			<h1 class="Sansumu m-4 text-6xl font-bold text-primary-500">Gå med i Discorden!</h1>
-			<span class="markdown">Eller gå direkt med i föreningen!</span>
+			<h1 class="Sansumu m-4 text-6xl font-bold text-primary-500">Gå med i SGC idag!</h1>
+			<span class="markdown">Gå med i vår öppna discord och bli medlem i vår förening helt gratis!</span>
 		</div>
 
 		<div class="flex justify-around">

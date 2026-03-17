@@ -4,7 +4,6 @@
 
 	import Logo from '$lib/components/Logo.svelte';
 	import NavLink from '$lib/components/navbar/NavLink.svelte';
-	import NavDropdown from '$lib/components/navbar/NavDropdown.svelte';
 	import AnimatedThemeToggler from '../animated-theme-toggler.svelte';
 	import { Moon, Sun } from '@lucide/svelte';
 
@@ -26,19 +25,12 @@
 		menuOpen = false;
 	}
 
-	const NAV = {
-		main: [
-			{ name: 'Nyheter', href: '/nyheter' },
-			{ name: 'Om oss', href: '/information/om-oss' },
-			{ name: 'Kalendern', href: '/kalendern' },
-		],
-		more: [
-			{ name: 'Information', href: '/information' },
-			{ name: 'Samarbeten', href: '/samarbeten' },
-			{ name: 'Servrar', href: '/servrar' },
-		],
-		end: [{ name: 'Kontakt', href: '/kontakt' }],
-	};
+	const NAV = [
+		{ name: 'Nyheter', href: '/nyheter' },
+		{ name: 'Kalendern', href: '/kalendern' },
+		{ name: 'Info', href: '/information' },
+		{ name: 'Kontakt', href: '/kontakt' },
+	];
 </script>
 
 <ModeWatcher />
@@ -57,31 +49,16 @@
 	</button>
 
 	<div class="hidden items-center gap-6 md:flex">
-		{#each NAV.main as link}
-			<NavLink {...link} />
+		{#each NAV as link}
+			<NavLink href={link.href} name={link.name} />
 		{/each}
-
-		<NavDropdown title="Mer" items={NAV.more} onClick={closeMenu} />
-
-		{#each NAV.end as link}
-			<NavLink {...link} />
-		{/each}
-
 		<AnimatedThemeToggler />
 	</div>
 
 	{#if menuOpen}
 		<div class="absolute top-full left-0 z-50 flex w-full flex-col bg-white p-4 shadow-xl md:hidden dark:bg-background">
-			{#each NAV.main as link}
-				<NavLink {...link} mobile onclick={closeMenu} />
-			{/each}
-
-			<div class="mt-1 mb-1">
-				<NavDropdown title="Mer" items={NAV.more} mobile onClick={closeMenu} />
-			</div>
-
-			{#each NAV.end as link}
-				<NavLink {...link} mobile onclick={closeMenu} />
+			{#each NAV as link}
+				<NavLink href={link.href} name={link.name}/>
 			{/each}
 
 			<button

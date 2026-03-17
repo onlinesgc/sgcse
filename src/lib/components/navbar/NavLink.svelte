@@ -12,6 +12,6 @@
 	}>();
 </script>
 
-<a {href} class={mobile ? 'py-2 text-xl hover:text-primary-500' : 'text-xl hover:text-primary-500'} {onclick}>
+<a {href} class={mobile ? 'py-4 text-xl hover:text-primary-500' : 'text-xl hover:text-primary-500'} {onclick}>
 	{name}
 </a>
