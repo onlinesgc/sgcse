@@ -4,13 +4,22 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - '3000:3000'
+      - "3000:3000"
     environment:
       - NODE_ENV=production
-    restart: always
+      - PB_TYPEGEN_URL=127.0.0.1:8090
+    restart: unless-stopped
     healthcheck:
-      test: ['CMD', 'wget', '--spider', '-q', 'http://localhost:3000']
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
       interval: 30s
       timeout: 10s
       retries: 3
       start_period: 10s
+  db:
+    image: elestio/pocketbase:v0.36.9
+    restart: unless-stopped
+    user: 0:0
+    ports:
+      - 8090:8090
+    volumes:
+      - ./data:/pb_data
