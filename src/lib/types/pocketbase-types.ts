@@ -100,6 +100,7 @@ export type NewsRecord = {
 	content?: HTMLString
 	created: IsoAutoDateString
 	id: string
+	image?: FileNameString
 	title?: string
 	updated: IsoAutoDateString
 }
