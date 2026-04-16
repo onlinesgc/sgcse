@@ -36,7 +36,7 @@
 	function getEventsForDay(date: Date) {
 		const offset = date.getTimezoneOffset() * 60000;
 		const localDate = new Date(date.getTime() - offset);
-		const dateString = localDate.toISOString().split('T')[0];
+		const dateString = localDate.toISOString().split('T')[0].split(' ')[0];
 
 		const dayOfWeek = date.getDay();
 		const weekOfMonth = Math.ceil(date.getDate() / 7);
@@ -48,7 +48,8 @@
 			if (event.type === 'weekly') {
 				return event.dayOfWeek === dayOfWeek;
 			}
-			return event.date === dateString;
+			const eventDateOnly = event.date ? event.date.replace('T', ' ').split(' ')[0] : undefined;
+			return eventDateOnly === dateString;
 		});
 	}
 
