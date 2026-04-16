@@ -14,6 +14,13 @@
 	let { data } = $props();
 	let information = $derived(data.information || []);
 
+	function getImageUrl(info: (typeof information)[0]): string | undefined {
+		if (info.image) {
+			return `/assets/information/${info.id}/${info.image}`;
+		}
+		return undefined;
+	}
+
 	let sortedInformation = $derived.by(() => {
 		const query = params.search.trim().toLowerCase();
 
@@ -57,17 +64,20 @@
 		{#if sortedInformation.length > 0}
 			{#each sortedInformation as info (info.id)}
 				<div transition:scale>
-					<Card href={'/information/' + info.id} title={info.title ?? 'Untitled'} id={info.id}>
+					<Card href={'/information/' + info.id} title={info.title ?? 'Untitled'} id={info.id} image={getImageUrl(info)}>
 						<span class="markdown">{@html info.description?.substring(0, 400) + '...'}</span>
 					</Card>
 				</div>
 			{/each}
 			<div transition:scale>
-				<Card href="/samarbeten" title="Samarbeten" id="samarbeten" />
-				<span class="markdown">Vi har samarbeten med flera olika föreningar och aktörer. Läs mer om de här.</span>
+				<Card href="/samarbeten" title="Samarbeten" id="samarbeten">
+					<span class="markdown">Vi har samarbeten med flera olika föreningar och aktörer. Läs mer om de här.</span>
+				</Card>
 			</div>
 			<div transition:scale>
-				<Card href="/servrar" title="Servrar" id="servrar" />
+				<Card href="/servrar" title="Servrar" id="servrar">
+					<span class="markdown">Våra servrar hittar du här.</span>
+				</Card>
 			</div>
 		{:else}
 			<p class="mt-4 text-center text-gray-500">Inga resultat hittade för "{params.search}"</p>
