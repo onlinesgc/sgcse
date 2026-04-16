@@ -14,7 +14,7 @@
 </script>
 
 <div class="flex justify-center">
-	<div class="mt-8 flex w-[50vw] flex-col items-center gap-8">
+	<div class="mt-8 flex w-full max-w-[80vw] flex-col items-center gap-8 p-4">
 		{#each blogPosts.reverse() as post (post.id)}
 			{@const created = new Date(post.created).toLocaleDateString()}
 			{@const edited = new Date(post.updated).toLocaleDateString()}
