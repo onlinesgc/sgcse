@@ -13,13 +13,15 @@
 </script>
 
 {#snippet inner()}
-	<div class="w-full rounded-xl border-gray-200 bg-gray-100 p-4 shadow-xl duration-300 hover:scale-105 dark:bg-neutral-800">
+	<div class="flex w-full gap-4 rounded-xl border-gray-200 bg-gray-100 p-4 shadow-xl duration-300 hover:scale-105 dark:bg-neutral-800">
+		<div class="min-w-0 flex-1">
+			<h1 class="Sansemu truncate text-xl font-bold text-primary-500 sm:text-2xl lg:text-4xl">{title}</h1>
+			{#if children}
+				{@render children()}
+			{/if}
+		</div>
 		{#if image}
-			<img src={image} alt="" class="mb-4 h-40 w-full rounded-lg object-cover lg:mb-6 lg:h-80" />
-		{/if}
-		<h1 class="Sansemu truncate text-xl font-bold text-primary-500 sm:text-2xl lg:text-4xl">{title}</h1>
-		{#if children}
-			{@render children()}
+			<img src={image} alt="" class="h-16 w-16 shrink-0 rounded-lg object-contain lg:h-24 lg:w-24" />
 		{/if}
 	</div>
 {/snippet}

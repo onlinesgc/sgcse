@@ -5,6 +5,7 @@ import type { ListResult } from 'pocketbase';
 
 export const load: PageServerLoad = async ({ locals }) => {
 	let collabs = await getList<CollaborationsRecord>(locals.pb, 'Collaborations');
+	const pbUrl = locals.pb.baseUrl;
 
 	return {
 		collabs: collabs.items.sort((a, b) => {
@@ -14,6 +15,11 @@ export const load: PageServerLoad = async ({ locals }) => {
 			if (az > bz) return -1;
 			if (az < bz) return 1;
 			return 0;
-		}),
+		}).map(collab => ({
+			...collab,
+			icon: collab.icon
+				? `${pbUrl}/api/files/Collaborations/${collab.id}/${collab.icon}`
+				: undefined
+		})),
 	};
 };
